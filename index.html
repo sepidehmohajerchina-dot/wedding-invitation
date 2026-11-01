@@ -8,6 +8,30 @@
 <title>陈中洪 & 林小妤 · 喜结良缘</title>
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+/* Wedding background for all pages */
+body,
+.hero,
+.details,
+.footer {
+  background-color: #650a16;
+  background-image:
+    linear-gradient(
+      rgba(55, 0, 10, 0.12),
+      rgba(55, 0, 10, 0.12)
+    ),
+    url("wedding-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Remove previous decorative overlays */
+.hero::before,
+.details::before {
+  display: none;
+}
+
 <style>
 :root {
   --gold:#f6d99a;
