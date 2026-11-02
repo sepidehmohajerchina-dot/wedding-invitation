@@ -1,245 +1,265 @@
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#650a16">
-<title>陈中洪 & 林小妤 · 喜结良缘</title>
-<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title> Zhonghong Chen & Sepideh Mohajer | Wedding Registration Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
 
 <style>
-  /* Wedding background for all pages */
-body,
-.hero,
-.details,
-.footer {
-  background-color: #650a16;
-  background-image:
-    linear-gradient(
-      rgba(55, 0, 10, 0.12),
-      rgba(55, 0, 10, 0.12)
-    ),
-    url("wedding-background.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+:root {
+  --gold: #f6d99a;
+  --darkgold: #b77a35;
+  --cream: #fff1cf;
+  --red: #650a16;
 }
 
-/* Remove previous decorative overlays */
-.hero::before,
-.details::before {
-  display: none;
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--cream);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  background: #450713;
 }
 
-body,
-.hero,
-.details,
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 22px 55px;
+  text-align: center;
+}
+
+.frame {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 650px);
+  padding: 48px 22px;
+  border: 2px solid var(--gold);
+  outline: 1px solid #c99755;
+  outline-offset: 8px;
+  border-radius: 48% 48% 18px 18px / 65px 65px 18px 18px;
+  box-shadow:
+    inset 0 0 0 8px #8e1c2a,
+    inset 0 0 0 9px #d7a85c,
+    0 18px 60px #26000666;
+}
+
+.frame:before,
+.frame:after {
+  content: "❀  ❈  ❀";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 22px;
+  letter-spacing: 10px;
+  white-space: nowrap;
+}
+
+.frame:before { top: 11px; }
+.frame:after { bottom: 10px; }
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 5px;
+  color: #ffdfaa;
+}
+
+.xi {
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 100px;
+  line-height: 1.3;
+  color: var(--gold);
+  text-shadow: 0 4px 24px #f3ad6466;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+h1, h2 {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(42px, 8vw, 70px);
+  margin: 4px 0 12px;
+  line-height: 1.35;
+}
+
+.names {
+  font-family: "Allura", cursive;
+  font-size: clamp(27px, 5vw, 42px);
+  line-height: 1.7;
+  color: #ffe5af;
+}
+
+.heart {
+  font-size: 24px;
+  color: #ffc6ac;
+}
+
+.quote {
+  font-size: 19px;
+  line-height: 1.9;
+  letter-spacing: .3px;
+}
+
+.date {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  margin-top: 25px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #ffe0a4;
+}
+
+.scroll {
+  margin-top: 40px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  animation: float 2s infinite;
+}
+
+.details {
+  padding: 80px 20px 100px;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+}
+
+.details h2 {
+  font-size: clamp(43px, 8vw, 62px);
+  color: var(--gold);
+  margin: 10px 0 25px;
+}
+
+.photo {
+  width: 100%;
+  max-width: 520px;
+  display: block;
+  margin: 28px auto;
+  border: 8px solid #a66b36;
+  outline: 2px solid #f6d99a;
+  outline-offset: 5px;
+  border-radius: 180px 180px 12px 12px / 80px 80px 12px 12px;
+  box-shadow: 0 18px 55px #18000899;
+}
+
+.info {
+  border: 1px solid #e7b96f;
+  border-radius: 18px;
+  padding: 30px 22px;
+  margin-top: 40px;
+  background: #5b0d1ab0;
+  line-height: 2.4;
+}
+
+.info strong {
+  color: var(--gold);
+  font-size: 21px;
+}
+
+.address {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
 .footer {
+  padding: 45px 20px;
+  text-align: center;
+  color: var(--gold);
+  line-height: 2;
+}
+
+.music {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 20;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: #780f20;
+  color: var(--gold);
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 5px 25px #0006;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1s, transform 1s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes glow {
+  from { filter: brightness(.9); }
+  to { filter: brightness(1.3); }
+}
+
+@keyframes float {
+  50% { transform: translateY(10px); }
+}
+
+@media (max-width: 480px) {
+  .frame { padding: 42px 15px; }
+  .quote {
+    font-size: 13px;
+    letter-spacing: .3px;
+    line-height: 2;
+  }
+  .details { padding: 65px 18px; }
+  .eyebrow { letter-spacing: 2px; }
+  .date { letter-spacing: .4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Floral background for all sections */
+body, .hero, .details, .footer {
   background-color: #650a16 !important;
   background-image: url("wedding-background.png") !important;
   background-size: cover !important;
-  background-position: center !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
 }
 
 .hero::before,
 .details::before {
   display: none !important;
-}
-:root {
-  --gold:#f6d99a;
-  --darkgold:#b77a35;
-  --cream:#fff1cf;
-  --red:#650a16;
-}
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
-body {
-  margin:0;
-  color:var(--cream);
-  font-family:"Noto Serif SC",serif;
-  background:#450713;
-}
-section {position:relative;overflow:hidden}
-.hero {
-  min-height:100svh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:65px 22px 55px;
-  text-align:center;
-  background:
-    radial-gradient(ellipse at 50% 30%,#b62832 0%,transparent 58%),
-    radial-gradient(ellipse at 90% 85%,#7d1123,transparent 55%),
-    linear-gradient(145deg,#450713,#8b1424 50%,#430712);
-}
-.hero:before,.details:before {
-  content:"";
-  position:absolute;
-  inset:0;
-  opacity:.13;
-  pointer-events:none;
-  background-image:
-    repeating-radial-gradient(circle at 0 0,
-      transparent 0 28px,#ffd38c 29px 30px,
-      transparent 31px 65px);
-}
-.frame {
-  position:relative;
-  z-index:1;
-  width:min(100%,650px);
-  padding:48px 22px;
-  border:2px solid var(--gold);
-  outline:1px solid #c99755;
-  outline-offset:8px;
-  border-radius:48% 48% 18px 18px / 65px 65px 18px 18px;
-  box-shadow:
-    inset 0 0 0 8px #8e1c2a,
-    inset 0 0 0 9px #d7a85c,
-    0 18px 60px #26000666;
-}
-.frame:before,.frame:after {
-  content:"❀  ❈  ❀";
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  color:var(--gold);
-  font-size:22px;
-  letter-spacing:10px;
-  white-space:nowrap;
-}
-.frame:before {top:11px}
-.frame:after {bottom:10px}
-.eyebrow {
-  font-size:13px;
-  letter-spacing:5px;
-  color:#ffdfaa;
-}
-.xi {
-  font-family:"Ma Shan Zheng",cursive;
-  font-size:100px;
-  line-height:1.3;
-  color:var(--gold);
-  text-shadow:0 4px 24px #f3ad6466;
-  animation:glow 3s ease-in-out infinite alternate;
-}
-h1,h2 {
-  font-family:"Ma Shan Zheng",cursive;
-  font-weight:400;
-}
-h1 {font-size:clamp(38px,8vw,64px);margin:4px 0 12px}
-.names {
-  font-family:"Ma Shan Zheng",cursive;
-  font-size:clamp(31px,7vw,48px);
-  line-height:1.7;
-  color:#ffe5af;
-}
-.heart {font-size:24px;color:#ffc6ac}
-.quote {font-size:15px;line-height:2.4;letter-spacing:2px}
-.date {
-  margin-top:25px;
-  font-size:18px;
-  letter-spacing:2px;
-  color:#ffe0a4;
-}
-.scroll {
-  margin-top:40px;
-  font-size:13px;
-  letter-spacing:3px;
-  animation:float 2s infinite;
-}
-.details {
-  padding:80px 20px 100px;
-  text-align:center;
-  background:
-    radial-gradient(ellipse at top,#9d2431,transparent 65%),
-    linear-gradient(#590c19,#3c0712);
-}
-.container {
-  position:relative;
-  z-index:1;
-  max-width:700px;
-  margin:auto;
-}
-.details h2 {
-  font-size:48px;
-  color:var(--gold);
-  margin:10px 0 25px;
-}
-.photo {
-  width:100%;
-  max-width:520px;
-  display:block;
-  margin:28px auto;
-  border:8px solid #a66b36;
-  outline:2px solid #f6d99a;
-  outline-offset:5px;
-  border-radius:180px 180px 12px 12px / 80px 80px 12px 12px;
-  box-shadow:0 18px 55px #18000899;
-}
-.info {
-  border:1px solid #e7b96f;
-  border-radius:18px;
-  padding:30px 22px;
-  margin-top:40px;
-  background:#5b0d1ab0;
-  line-height:2.4;
-}
-.info strong {
-  color:var(--gold);
-  font-size:21px;
-}
-.address {font-size:15px;overflow-wrap:anywhere}
-.footer {
-  padding:45px 20px;
-  text-align:center;
-  background:#31050c;
-  color:var(--gold);
-  line-height:2;
-}
-.music {
-  position:fixed;
-  right:20px;
-  bottom:24px;
-  z-index:20;
-  width:56px;
-  height:56px;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  background:#780f20;
-  color:var(--gold);
-  font-size:25px;
-  cursor:pointer;
-  box-shadow:0 5px 25px #0006;
-}
-.reveal {
-  opacity:0;
-  transform:translateY(35px);
-  transition:opacity 1s,transform 1s;
-}
-.reveal.visible {opacity:1;transform:none}
-@keyframes glow {
-  from {filter:brightness(.9)}
-  to {filter:brightness(1.3)}
-}
-@keyframes float {
-  50% {transform:translateY(10px)}
-}
-@media(max-width:480px) {
-  .frame {padding:42px 15px}
-  .quote {font-size:13px}
-  .details {padding:65px 18px}
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*:before,*:after {
-    animation:none!important;
-    transition:none!important;
-    scroll-behavior:auto!important;
-  }
-  .reveal {opacity:1;transform:none}
 }
 </style>
 </head>
@@ -248,72 +268,99 @@ h1 {font-size:clamp(38px,8vw,64px);margin:4px 0 12px}
 
 <section class="hero">
   <div class="frame">
-    <div class="eyebrow">良辰吉日 · 喜结良缘</div>
-    <div class="xi">囍</div>
-    <h1>结婚登记邀请函</h1>
-    <div class="names">
-      陈中洪 <span class="heart">♡</span> 林小妤
+    <div class="eyebrow">
+      A JOYFUL BEGINNING · FOREVER TOGETHER
     </div>
+
+    <div class="xi">囍</div>
+
+    <h1>Wedding Registration Invitation</h1>
+
+    <div class="names">
+      Chen Zhonghong
+      <span class="heart">♡</span>
+      Lin Xiaoyu
+    </div>
+
     <p class="quote">
-      两姓联姻，一堂缔约<br>
-      良缘永结，匹配同称<br>
-      诚邀您见证我们的幸福时刻
+      Two hearts, one promise<br>
+      A lifetime of love begins here<br>
+      We warmly invite you to share our special moment
     </p>
-    <div class="date">2026年11月16日 · 星期一</div>
+
+    <div class="date">
+      November 16, 2026 · Monday
+    </div>
   </div>
-  <div class="scroll">向下滑动 · 开启幸福 ↓</div>
+
+  <div class="scroll">
+    SCROLL DOWN · SHARE OUR JOY ↓
+  </div>
 </section>
 
 <section class="details">
   <div class="container">
     <div class="reveal">
       <div class="eyebrow">OUR SPECIAL DAY</div>
-      <h2>执子之手 · 与子偕老</h2>
+
+      <h2>Hand in Hand, For a Lifetime</h2>
+
       <p class="quote">
-        从此一屋两人，三餐四季<br>
-        山河远阔，人间烟火<br>
-        皆与你共度
+        One home, two hearts, and a lifetime of seasons<br>
+        Through every journey and everyday moment<br>
+        Together, always
       </p>
     </div>
 
     <img
       class="photo reveal"
       src="couple.png"
-      alt="陈中洪与林小妤的合影"
+      alt="Wedding portrait of Chen Zhonghong and Lin Xiaoyu"
     >
 
     <div class="info reveal">
-      <strong>诚挚邀请</strong>
-      <p>愿与您共同分享这份喜悦</p>
-      <strong>日期</strong>
-      <p>2026年11月16日 星期一</p>
-      <strong>登记地点</strong>
-      <p>河南省政务服务中心一楼F区</p>
-      <strong>详细地址</strong>
+      <strong>With Love, We Invite You</strong>
+
+      <p>
+        We would be delighted to share this
+        joyful occasion with you.
+      </p>
+
+      <strong>Date</strong>
+      <p>Monday, November 16, 2026</p>
+
+      <strong>Registration Venue</strong>
+      <p>
+        Henan Provincial Government Service Center,
+        1st Floor, Zone F
+      </p>
+
+      <strong>Address</strong>
       <p class="address">
-        郑州市郑东新区农业南路与祥盛街交叉口
-        向东100米路南，省政务服务中心一楼F区。
+        South side of the road, 100 meters east of the
+        intersection of Nongye South Road and Xiangsheng Street,
+        Zhengdong New District, Zhengzhou, Henan, China.
+        (1st Floor, Zone F)
       </p>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <div style="font-family:'Ma Shan Zheng';font-size:34px">
-    百年好合 · 永结同心
+  <div style="font-family:'Great Vibes',cursive;font-size:38px">
+    A Lifetime of Love · Forever as One
   </div>
-  <div>陈中洪 ♡ 林小妤</div>
+
+  <div>Chen Zhonghong ♡ Lin Xiaoyu</div>
   <small>2026.11.16</small>
 </footer>
 
-<button class="music" id="musicButton"
-        aria-label="播放或暂停音乐">♫</button>
+<button
+  class="music"
+  id="musicButton"
+  aria-label="Play or pause music"
+>♫</button>
 
-<!--
-  برای موسیقی دلخواه:
-  یک فایل مجاز MP3 با نام wedding-music.mp3
-  کنار index.html آپلود کن.
--->
 <audio id="bgMusic" loop preload="none">
   <source src="wedding-music.mp3" type="audio/mpeg">
 </audio>
@@ -321,12 +368,12 @@ h1 {font-size:clamp(38px,8vw,64px);margin:4px 0 12px}
 <script>
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
+    if (entry.isIntersecting) {
       entry.target.classList.add("visible");
       observer.unobserve(entry.target);
     }
   });
-},{threshold:0.12});
+}, { threshold: 0.12 });
 
 document.querySelectorAll(".reveal")
   .forEach(el => observer.observe(el));
@@ -335,16 +382,19 @@ const music = document.getElementById("bgMusic");
 const button = document.getElementById("musicButton");
 
 button.addEventListener("click", async () => {
-  if(!music.paused) {
+  if (!music.paused) {
     music.pause();
     button.textContent = "♫";
     return;
   }
+
   try {
     await music.play();
     button.textContent = "Ⅱ";
-  } catch(e) {
-    alert("لطفاً فایل موسیقی wedding-music.mp3 را به سایت اضافه کنید.");
+  } catch (e) {
+    alert(
+      "Music could not be played. Please check wedding-music.mp3."
+    );
   }
 });
 </script>
