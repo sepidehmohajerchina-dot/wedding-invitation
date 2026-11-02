@@ -32,6 +32,22 @@ body,
   display: none;
 }
 
+body,
+.hero,
+.details,
+.footer {
+  background-color: #650a16 !important;
+  background-image: url("wedding-background.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.hero::before,
+.details::before {
+  display: none !important;
+}
+
 <style>
 :root {
   --gold:#f6d99a;
