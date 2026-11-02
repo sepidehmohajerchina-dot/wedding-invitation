@@ -2,424 +2,490 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#650a16">
-<title> Zhonghong Chen & Sepideh Mohajer | Wedding Registration Invitation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#650a16">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <title>Zhonghong Chen & Sepideh Mohajer | Wedding Registration Invitation</title>
 
-<style>
-:root {
-  --gold: #f6d99a;
-  --darkgold: #b77a35;
-  --cream: #fff1cf;
-  --red: #650a16;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-* { box-sizing: border-box; }
+  <style>
+    :root {
+      --gold: #f6d99a;
+      --darkgold: #b77a35;
+      --cream: #fff1cf;
+      --red: #650a16;
+    }
 
-html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  color: var(--cream);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  background: #450713;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-section {
-  position: relative;
-  overflow: hidden;
-}
+    body {
+      margin: 0;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      background-color: #650a16;
+    }
 
-.hero {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 65px 22px 55px;
-  text-align: center;
-}
+    section {
+      position: relative;
+      overflow: hidden;
+    }
 
-.frame {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 650px);
-  padding: 48px 22px;
-  border: 2px solid var(--gold);
-  outline: 1px solid #c99755;
-  outline-offset: 8px;
-  border-radius: 48% 48% 18px 18px / 65px 65px 18px 18px;
-  box-shadow:
-    inset 0 0 0 8px #8e1c2a,
-    inset 0 0 0 9px #d7a85c,
-    0 18px 60px #26000666;
-}
+    /* Floral background for desktop */
+    body,
+    .hero,
+    .details,
+    .footer {
+      background-color: #650a16;
+      background-image: url("wedding-background.png");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
 
-.frame:before,
-.frame:after {
-  content: "❀  ❈  ❀";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--gold);
-  font-size: 22px;
-  letter-spacing: 10px;
-  white-space: nowrap;
-}
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 22px 55px;
+      text-align: center;
+    }
 
-.frame:before { top: 11px; }
-.frame:after { bottom: 10px; }
+    .frame {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 650px);
+      padding: 48px 22px;
+      border: 2px solid var(--gold);
+      outline: 1px solid #c99755;
+      outline-offset: 8px;
+      border-radius:
+        48% 48% 18px 18px /
+        65px 65px 18px 18px;
+      box-shadow:
+        inset 0 0 0 8px #8e1c2a,
+        inset 0 0 0 9px #d7a85c,
+        0 18px 60px #26000666;
+    }
 
-.eyebrow {
-  font-size: 13px;
-  letter-spacing: 5px;
-  color: #ffdfaa;
-}
+    .frame::before,
+    .frame::after {
+      content: "❀  ❈  ❀";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--gold);
+      font-size: 22px;
+      letter-spacing: 10px;
+      white-space: nowrap;
+    }
 
-.xi {
-  font-family: "Ma Shan Zheng", cursive;
-  font-size: 100px;
-  line-height: 1.3;
-  color: var(--gold);
-  text-shadow: 0 4px 24px #f3ad6466;
-  animation: glow 3s ease-in-out infinite alternate;
-}
+    .frame::before {
+      top: 11px;
+    }
 
-h1, h2 {
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-}
+    .frame::after {
+      bottom: 10px;
+    }
 
-h1 {
-  font-size: clamp(42px, 8vw, 70px);
-  margin: 4px 0 12px;
-  line-height: 1.35;
-}
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 5px;
+      color: #ffdfaa;
+    }
 
-.names {
-  font-family: "Allura", cursive;
-  font-size: clamp(27px, 5vw, 42px);
-  line-height: 1.7;
-  color: #ffe5af;
-}
+    /* H & S golden monogram */
+    .monogram {
+      display: block;
+      width: 260px;
+      max-width: 75%;
+      height: auto;
+      margin: 12px auto 18px;
+      object-fit: contain;
+    }
 
-.heart {
-  font-size: 24px;
-  color: #ffc6ac;
-}
+    h1,
+    h2 {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+    }
 
-.quote {
-  font-size: 19px;
-  line-height: 1.9;
-  letter-spacing: .3px;
-}
+    h1 {
+      font-size: clamp(42px, 8vw, 70px);
+      margin: 4px 0 12px;
+      line-height: 1.35;
+    }
 
-.date {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  margin-top: 25px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: #ffe0a4;
-}
+    .names {
+      font-family: "Allura", cursive;
+      font-size: clamp(27px, 5vw, 42px);
+      line-height: 1.7;
+      color: #ffe5af;
+    }
 
-.scroll {
-  margin-top: 40px;
-  font-size: 13px;
-  letter-spacing: 3px;
-  animation: float 2s infinite;
-}
+    .heart {
+      font-size: 24px;
+      color: #ffc6ac;
+    }
 
-.details {
-  padding: 80px 20px 100px;
-  text-align: center;
-}
+    .quote {
+      font-size: 19px;
+      line-height: 1.9;
+      letter-spacing: 0.3px;
+    }
 
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: auto;
-}
+    .date {
+      margin-top: 25px;
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: #ffe0a4;
+    }
 
-.details h2 {
-  font-size: clamp(43px, 8vw, 62px);
-  color: var(--gold);
-  margin: 10px 0 25px;
-}
+    .scroll {
+      margin-top: 40px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      animation: float 2s infinite;
+    }
 
-.photo {
-  width: 100%;
-  max-width: 520px;
-  display: block;
-  margin: 28px auto;
-  border: 8px solid #a66b36;
-  outline: 2px solid #f6d99a;
-  outline-offset: 5px;
-  border-radius: 180px 180px 12px 12px / 80px 80px 12px 12px;
-  box-shadow: 0 18px 55px #18000899;
-}
+    .details {
+      padding: 80px 20px 100px;
+      text-align: center;
+    }
 
-.info {
-  border: 1px solid #e7b96f;
-  border-radius: 18px;
-  padding: 30px 22px;
-  margin-top: 40px;
-  background: #5b0d1ab0;
-  line-height: 2.4;
-}
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: auto;
+    }
 
-.info strong {
-  color: var(--gold);
-  font-size: 21px;
-}
+    .details h2 {
+      font-size: clamp(43px, 8vw, 62px);
+      color: var(--gold);
+      margin: 10px 0 25px;
+    }
 
-.address {
-  font-size: 15px;
-  overflow-wrap: anywhere;
-}
+    .photo {
+      width: 100%;
+      max-width: 520px;
+      display: block;
+      margin: 28px auto;
+      border: 8px solid #a66b36;
+      outline: 2px solid #f6d99a;
+      outline-offset: 5px;
+      border-radius:
+        180px 180px 12px 12px /
+        80px 80px 12px 12px;
+      box-shadow: 0 18px 55px #18000899;
+    }
 
-.footer {
-  padding: 45px 20px;
-  text-align: center;
-  color: var(--gold);
-  line-height: 2;
-}
+    .info {
+      border: 1px solid #e7b96f;
+      border-radius: 18px;
+      padding: 30px 22px;
+      margin-top: 40px;
+      background: #5b0d1ab0;
+      line-height: 2.4;
+    }
 
-.music {
-  position: fixed;
-  right: 20px;
-  bottom: 24px;
-  z-index: 20;
-  width: 56px;
-  height: 56px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  background: #780f20;
-  color: var(--gold);
-  font-size: 25px;
-  cursor: pointer;
-  box-shadow: 0 5px 25px #0006;
-}
+    .info strong {
+      color: var(--gold);
+      font-size: 21px;
+    }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(35px);
-  transition: opacity 1s, transform 1s;
-}
+    .address {
+      font-size: 15px;
+      overflow-wrap: anywhere;
+    }
 
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
+    .footer {
+      padding: 45px 20px;
+      text-align: center;
+      color: var(--gold);
+      line-height: 2;
+    }
 
-@keyframes glow {
-  from { filter: brightness(.9); }
-  to { filter: brightness(1.3); }
-}
+    .music {
+      position: fixed;
+      right: 20px;
+      bottom: 24px;
+      z-index: 20;
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: #780f20;
+      color: var(--gold);
+      font-size: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px 25px #0006;
+    }
 
-@keyframes float {
-  50% { transform: translateY(10px); }
-}
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity 1s,
+        transform 1s;
+    }
 
-@media (max-width: 480px) {
-  .frame { padding: 42px 15px; }
-  .quote {
-    font-size: 13px;
-    letter-spacing: .3px;
-    line-height: 2;
-  }
-  .details { padding: 65px 18px; }
-  .eyebrow { letter-spacing: 2px; }
-  .date { letter-spacing: .4px; }
-}
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *:before, *:after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
+    @keyframes float {
+      50% {
+        transform: translateY(10px);
+      }
+    }
 
-/* Floral background for all sections */
-body, .hero, .details, .footer {
-  background-color: #650a16 !important;
-  background-image: url("wedding-background.png") !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-}
+    /* Mobile layout and floral background */
+    @media (max-width: 600px) {
+      body,
+      .hero,
+      .details,
+      .footer {
+        background-image: url("wedding-background.png");
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: repeat-y;
+        background-attachment: scroll;
+      }
 
-.hero::before,
-.details::before {
-  display: none !important;
-}
-  
-.monogram {
-  display: block;
-  width: 260px;
-  max-width: 75%;
-  height: auto;
-  margin: 12px auto 18px;
-  object-fit: contain;
-}
-.monogram {
-  display: block;
-  width: 260px;
-  max-width: 75%;
-  height: auto;
-  margin: 12px auto 18px;
-  object-fit: contain;
-}
-  
-</style>
+      .hero {
+        padding: 50px 18px 45px;
+      }
+
+      .frame {
+        padding: 42px 15px;
+      }
+
+      .monogram {
+        width: 190px;
+        max-width: 75%;
+        margin: 10px auto 15px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 10vw, 52px);
+      }
+
+      .names {
+        font-size: clamp(26px, 7vw, 36px);
+      }
+
+      .quote {
+        font-size: 15px;
+        letter-spacing: 0.3px;
+        line-height: 1.9;
+      }
+
+      .details {
+        padding: 65px 18px;
+      }
+
+      .eyebrow {
+        letter-spacing: 2px;
+      }
+
+      .date {
+        font-size: 16px;
+        letter-spacing: 0.4px;
+      }
+
+      .info {
+        padding: 25px 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="frame">
-    <div class="eyebrow">
-      A JOYFUL BEGINNING · FOREVER TOGETHER
-    </div>
+  <section class="hero">
+    <div class="frame">
 
-   <img
-  src="hs-monogram.png"
-  alt="H and S Wedding Monogram"
-  class="monogram"
->
+      <div class="eyebrow">
+        A JOYFUL BEGINNING · FOREVER TOGETHER
+      </div>
 
-    <h1>Wedding Registration Invitation</h1>
+      <img
+        src="hs-monogram.png"
+        alt="H and S Wedding Monogram"
+        class="monogram"
+      >
 
-    <div class="names">
-      Zhonghong Chen 
-      <span class="heart">♡</span>
-      Sepideh Mohajer
-    </div>
+      <h1>Wedding Registration Invitation</h1>
 
-    <p class="quote">
-      Two hearts, one promise<br>
-      A lifetime of love begins here<br>
-      We warmly invite you to share our special moment
-    </p>
-
-    <div class="date">
-      November 16, 2026 · Monday
-    </div>
-  </div>
-
-  <div class="scroll">
-    SCROLL DOWN · SHARE OUR JOY ↓
-  </div>
-</section>
-
-<section class="details">
-  <div class="container">
-    <div class="reveal">
-      <div class="eyebrow">OUR SPECIAL DAY</div>
-
-      <h2>Hand in Hand, For a Lifetime</h2>
+      <div class="names">
+        Zhonghong Chen
+        <span class="heart">♡</span>
+        Sepideh Mohajer
+      </div>
 
       <p class="quote">
-        One home, two hearts, and a lifetime of seasons<br>
-        Through every journey and everyday moment<br>
-        Together, always
+        Two hearts, one promise<br>
+        A lifetime of love begins here<br>
+        We warmly invite you to share our special moment
       </p>
+
+      <div class="date">
+        November 16, 2026 · Monday
+      </div>
+
     </div>
 
-    <img
-      class="photo reveal"
-      src="couple.png"
-      alt="Wedding portrait of Chen Zhonghong and Lin Xiaoyu"
+    <div class="scroll">
+      SCROLL DOWN · SHARE OUR JOY ↓
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="eyebrow">OUR SPECIAL DAY</div>
+
+        <h2>Hand in Hand, For a Lifetime</h2>
+
+        <p class="quote">
+          One home, two hearts, and a lifetime of seasons<br>
+          Through every journey and everyday moment<br>
+          Together, always
+        </p>
+      </div>
+
+      <img
+        class="photo reveal"
+        src="couple.png"
+        alt="Wedding portrait of Zhonghong Chen and Sepideh Mohajer"
+      >
+
+      <div class="info reveal">
+        <strong>With Love, We Invite You</strong>
+
+        <p>
+          We would be delighted to share this
+          joyful occasion with you.
+        </p>
+
+        <strong>Date</strong>
+        <p>Monday, November 16, 2026</p>
+
+        <strong>Registration Venue</strong>
+        <p>
+          Henan Provincial Government Service Center,
+          1st Floor, Zone F
+        </p>
+
+        <strong>Address</strong>
+        <p class="address">
+          South side of the road, 100 meters east of the
+          intersection of Nongye South Road and Xiangsheng Street,
+          Zhengdong New District, Zhengzhou, Henan, China.
+          (1st Floor, Zone F)
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+
+    <div
+      style="
+        font-family: 'Great Vibes', cursive;
+        font-size: 38px;
+      "
     >
-
-    <div class="info reveal">
-      <strong>With Love, We Invite You</strong>
-
-      <p>
-        We would be delighted to share this
-        joyful occasion with you.
-      </p>
-
-      <strong>Date</strong>
-      <p>Monday, November 16, 2026</p>
-
-      <strong>Registration Venue</strong>
-      <p>
-        Henan Provincial Government Service Center,
-        1st Floor, Zone F
-      </p>
-
-      <strong>Address</strong>
-      <p class="address">
-        South side of the road, 100 meters east of the
-        intersection of Nongye South Road and Xiangsheng Street,
-        Zhengdong New District, Zhengzhou, Henan, China.
-        (1st Floor, Zone F)
-      </p>
+      A Lifetime of Love · Forever as One
     </div>
-  </div>
-</section>
 
-<footer class="footer">
-  <div style="font-family:'Great Vibes',cursive;font-size:38px">
-    A Lifetime of Love · Forever as One
-  </div>
+    <div>
+      Zhonghong Chen ♡ Sepideh Mohajer
+    </div>
 
-  <div>Zhonghong Chen ♡ Sepideh Mohajer</div>
-  <small>2026.11.16</small>
-</footer>
+    <small>2026.11.16</small>
 
-<button
-  class="music"
-  id="musicButton"
-  aria-label="Play or pause music"
->♫</button>
+  </footer>
 
-<audio id="bgMusic" loop preload="none">
-  <source src="wedding-music.mp3" type="audio/mpeg">
-</audio>
+  <button
+    class="music"
+    id="musicButton"
+    aria-label="Play or pause music"
+  >♫</button>
 
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
+  <audio id="bgMusic" loop preload="none">
+    <source
+      src="wedding-music.mp3"
+      type="audio/mpeg"
+    >
+  </audio>
 
-document.querySelectorAll(".reveal")
-  .forEach(el => observer.observe(el));
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
 
-const music = document.getElementById("bgMusic");
-const button = document.getElementById("musicButton");
+    document.querySelectorAll(".reveal")
+      .forEach(el => observer.observe(el));
 
-button.addEventListener("click", async () => {
-  if (!music.paused) {
-    music.pause();
-    button.textContent = "♫";
-    return;
-  }
+    const music = document.getElementById("bgMusic");
+    const button = document.getElementById("musicButton");
 
-  try {
-    await music.play();
-    button.textContent = "Ⅱ";
-  } catch (e) {
-    alert(
-      "Music could not be played. Please check wedding-music.mp3."
-    );
-  }
-});
-</script>
+    button.addEventListener("click", async () => {
+      if (!music.paused) {
+        music.pause();
+        button.textContent = "♫";
+        return;
+      }
+
+      try {
+        await music.play();
+        button.textContent = "Ⅱ";
+      } catch (e) {
+        alert(
+          "Music could not be played. Please check wedding-music.mp3."
+        );
+      }
+    });
+  </script>
 
 </body>
 </html>
