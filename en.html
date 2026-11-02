@@ -2,610 +2,651 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#650a16">
-
-<title>Zhonghong Chen & Sepideh Mohajer | Wedding Registration Invitation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --gold: #f6d99a;
-  --darkgold: #b77a35;
-  --cream: #fff1cf;
-  --red: #650a16;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: #650a16;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  position: relative;
-  isolation: isolate;
-  color: var(--cream);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  background: transparent;
-}
-
-/* ONE CONTINUOUS FLORAL BACKGROUND */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-
-  background-color: #650a16;
-  background-image: url("wedding-background.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-/* SECTIONS HAVE NO SEPARATE BACKGROUNDS */
-
-.hero,
-.details,
-.footer {
-  position: relative;
-  background: transparent !important;
-  background-image: none !important;
-}
-
-section {
-  overflow: visible;
-}
-
-/* FIRST SECTION */
-
-.hero {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 65px 22px 55px;
-  text-align: center;
-}
-
-/* GOLDEN FRAME */
-
-.frame {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 650px);
-  padding: 48px 22px;
-
-  border: 2px solid var(--gold);
-  outline: 1px solid #c99755;
-  outline-offset: 8px;
-
-  border-radius:
-    48% 48% 18px 18px /
-    65px 65px 18px 18px;
-
-  box-shadow:
-    inset 0 0 0 8px #8e1c2a,
-    inset 0 0 0 9px #d7a85c,
-    0 18px 60px #26000666;
-
-  background: rgba(75, 0, 12, 0.12);
-}
-
-/* FRAME DECORATIONS */
-
-.frame::before,
-.frame::after {
-  content: "❀  ❈  ❀";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--gold);
-  font-size: 22px;
-  letter-spacing: 10px;
-  white-space: nowrap;
-}
-
-.frame::before {
-  top: 11px;
-}
-
-.frame::after {
-  bottom: 10px;
-}
-
-/* SMALL HEADINGS */
-
-.eyebrow {
-  font-size: 13px;
-  letter-spacing: 5px;
-  color: #ffdfaa;
-}
-
-/* H & S GOLDEN MONOGRAM */
-
-.monogram {
-  display: block;
-  width: 260px;
-  max-width: 75%;
-  height: auto;
-  margin: 12px auto 18px;
-  object-fit: contain;
-}
-
-/* ENGLISH CALLIGRAPHY */
-
-h1,
-h2 {
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-}
-
-h1 {
-  font-size: clamp(42px, 8vw, 70px);
-  margin: 4px 0 12px;
-  line-height: 1.35;
-}
-
-.names {
-  font-family: "Allura", cursive;
-  font-size: clamp(27px, 5vw, 42px);
-  line-height: 1.7;
-  color: #ffe5af;
-}
-
-.heart {
-  font-size: 24px;
-  color: #ffc6ac;
-}
-
-.quote {
-  font-size: 19px;
-  line-height: 1.9;
-  letter-spacing: 0.3px;
-}
-
-.date {
-  margin-top: 25px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: #ffe0a4;
-}
-
-/* SCROLL MESSAGE */
-
-.scroll {
-  margin-top: 40px;
-  font-size: 13px;
-  letter-spacing: 3px;
-  animation: float 2s infinite;
-}
-
-/* SECOND SECTION */
-
-.details {
-  padding: 80px 20px 100px;
-  text-align: center;
-}
-
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: auto;
-}
-
-.details h2 {
-  font-size: clamp(43px, 8vw, 62px);
-  color: var(--gold);
-  margin: 10px 0 25px;
-}
-
-/* COUPLE PHOTO */
-
-.photo {
-  width: 100%;
-  max-width: 520px;
-  display: block;
-  margin: 28px auto;
-
-  border: 8px solid #a66b36;
-  outline: 2px solid #f6d99a;
-  outline-offset: 5px;
-
-  border-radius:
-    180px 180px 12px 12px /
-    80px 80px 12px 12px;
-
-  box-shadow: 0 18px 55px #18000899;
-}
-
-/* EVENT INFORMATION */
-
-.info {
-  border: 1px solid #e7b96f;
-  border-radius: 18px;
-  padding: 30px 22px;
-  margin-top: 40px;
-
-  background: rgba(75, 0, 12, 0.72);
-  line-height: 2.4;
-}
-
-.info strong {
-  color: var(--gold);
-  font-size: 21px;
-}
-
-.address {
-  font-size: 15px;
-  overflow-wrap: anywhere;
-}
-
-/* FOOTER */
-
-.footer {
-  padding: 45px 20px;
-  text-align: center;
-  color: var(--gold);
-  line-height: 2;
-}
-
-/* MUSIC BUTTON */
-
-.music {
-  position: fixed;
-  right: 20px;
-  bottom: 24px;
-  z-index: 20;
-
-  width: 56px;
-  height: 56px;
-
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-
-  background: #780f20;
-  color: var(--gold);
-  font-size: 25px;
-  cursor: pointer;
-
-  box-shadow: 0 5px 25px #0006;
-}
-
-/* SCROLL ANIMATIONS */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(35px);
-  transition:
-    opacity 1s,
-    transform 1s;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-@keyframes float {
-  50% {
-    transform: translateY(10px);
-  }
-}
-
-/* MOBILE RESPONSIVE DESIGN */
-
-@media (max-width: 600px) {
-
-  /*
-    The floral image is attached only once.
-    No repeated background at section boundaries.
-  */
-
-  body::before {
-    background-color: #650a16;
-    background-image: url("wedding-background.png");
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center center;
-  }
-
-  .hero {
-    padding: 50px 18px 45px;
-  }
-
-  .frame {
-    padding: 42px 15px;
-  }
-
-  .monogram {
-    width: 190px;
-    max-width: 75%;
-    margin: 10px auto 15px;
-  }
-
-  h1 {
-    font-size: clamp(38px, 10vw, 52px);
-  }
-
-  .names {
-    font-size: clamp(26px, 7vw, 36px);
-  }
-
-  .quote {
-    font-size: 15px;
-    letter-spacing: 0.3px;
-    line-height: 1.9;
-  }
-
-  .details {
-    padding: 65px 18px;
-  }
-
-  .eyebrow {
-    letter-spacing: 2px;
-  }
-
-  .date {
-    font-size: 16px;
-    letter-spacing: 0.4px;
-  }
-
-  .info {
-    padding: 25px 15px;
-  }
-
-  .music {
-    right: 15px;
-    bottom: 20px;
-    width: 50px;
-    height: 50px;
-  }
-}
-
-/* REDUCED MOTION ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#650a16">
+
+  <title>Zhonghong Chen & Sepideh Mohajer | Wedding Registration Invitation</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --gold: #f6d99a;
+      --darkgold: #b77a35;
+      --cream: #fff1cf;
+      --red: #650a16;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #650a16;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      position: relative;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      background-color: #650a16;
+    }
+
+    /*
+      ONE FLORAL BACKGROUND FOR THE ENTIRE PAGE
+
+      The background is fixed behind the content.
+      It does not restart at section boundaries.
+    */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+
+      background-color: #650a16;
+      background-image: url("wedding-background.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    /*
+      ALL PAGE SECTIONS ARE TRANSPARENT
+    */
+
+    .hero,
+    .details,
+    .footer {
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      background-image: none;
+    }
+
+    section {
+      overflow: visible;
+    }
+
+    /*
+      HERO SECTION
+    */
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 22px 55px;
+      text-align: center;
+    }
+
+    /*
+      GOLDEN DECORATIVE FRAME
+    */
+
+    .frame {
+      position: relative;
+      width: min(100%, 650px);
+      padding: 48px 22px;
+
+      border: 2px solid var(--gold);
+      outline: 1px solid #c99755;
+      outline-offset: 8px;
+
+      border-radius:
+        48% 48% 18px 18px /
+        65px 65px 18px 18px;
+
+      box-shadow:
+        inset 0 0 0 8px #8e1c2a,
+        inset 0 0 0 9px #d7a85c,
+        0 18px 60px #26000666;
+
+      background: rgba(75, 0, 12, 0.08);
+    }
+
+    .frame::before,
+    .frame::after {
+      content: "❀  ❈  ❀";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--gold);
+      font-size: 22px;
+      letter-spacing: 10px;
+      white-space: nowrap;
+    }
+
+    .frame::before {
+      top: 11px;
+    }
+
+    .frame::after {
+      bottom: 10px;
+    }
+
+    /*
+      SMALL HEADING
+    */
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 5px;
+      color: #ffdfaa;
+    }
+
+    /*
+      H & S MONOGRAM
+    */
+
+    .monogram {
+      display: block;
+      width: 260px;
+      max-width: 75%;
+      height: auto;
+      margin: 12px auto 18px;
+      object-fit: contain;
+    }
+
+    /*
+      ENGLISH CALLIGRAPHY
+    */
+
+    h1,
+    h2 {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 70px);
+      margin: 4px 0 12px;
+      line-height: 1.35;
+    }
+
+    .names {
+      font-family: "Allura", cursive;
+      font-size: clamp(27px, 5vw, 42px);
+      line-height: 1.7;
+      color: #ffe5af;
+    }
+
+    .heart {
+      font-size: 24px;
+      color: #ffc6ac;
+    }
+
+    .quote {
+      font-size: 19px;
+      line-height: 1.9;
+      letter-spacing: 0.3px;
+    }
+
+    .date {
+      margin-top: 25px;
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: #ffe0a4;
+    }
+
+    /*
+      SCROLL MESSAGE
+    */
+
+    .scroll {
+      margin-top: 40px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      animation: float 2s infinite;
+    }
+
+    /*
+      DETAILS SECTION
+    */
+
+    .details {
+      padding: 80px 20px 100px;
+      text-align: center;
+    }
+
+    .container {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .details h2 {
+      font-size: clamp(43px, 8vw, 62px);
+      color: var(--gold);
+      margin: 10px 0 25px;
+    }
+
+    /*
+      COUPLE PHOTO
+    */
+
+    .photo {
+      width: 100%;
+      max-width: 520px;
+      display: block;
+      margin: 28px auto;
+
+      border: 8px solid #a66b36;
+      outline: 2px solid #f6d99a;
+      outline-offset: 5px;
+
+      border-radius:
+        180px 180px 12px 12px /
+        80px 80px 12px 12px;
+
+      box-shadow: 0 18px 55px #18000899;
+    }
+
+    /*
+      EVENT INFORMATION
+    */
+
+    .info {
+      border: 1px solid #e7b96f;
+      border-radius: 18px;
+      padding: 30px 22px;
+      margin-top: 40px;
+
+      background: rgba(75, 0, 12, 0.76);
+      line-height: 2.4;
+    }
+
+    .info strong {
+      color: var(--gold);
+      font-size: 21px;
+    }
+
+    .address {
+      font-size: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    /*
+      FOOTER
+    */
+
+    .footer {
+      padding: 45px 20px;
+      text-align: center;
+      color: var(--gold);
+      line-height: 2;
+    }
+
+    /*
+      MUSIC BUTTON
+    */
+
+    .music {
+      position: fixed;
+      right: 20px;
+      bottom: 24px;
+      z-index: 20;
+
+      width: 56px;
+      height: 56px;
+
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+
+      background: #780f20;
+      color: var(--gold);
+      font-size: 25px;
+      cursor: pointer;
+
+      box-shadow: 0 5px 25px #0006;
+    }
+
+    /*
+      SCROLL ANIMATIONS
+    */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+
+      transition:
+        opacity 1s,
+        transform 1s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    /*
+      MOBILE DESIGN
+    */
+
+    @media (max-width: 600px) {
+
+      /*
+        Keep the floral background continuous.
+        No repeat-y and no individual section images.
+      */
+
+      body::before {
+        background-image: url("wedding-background.png");
+        background-color: #650a16;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+
+      .hero {
+        padding: 50px 18px 45px;
+      }
+
+      .frame {
+        padding: 42px 15px;
+      }
+
+      .monogram {
+        width: 190px;
+        max-width: 75%;
+        margin: 10px auto 15px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 10vw, 52px);
+      }
+
+      .names {
+        font-size: clamp(26px, 7vw, 36px);
+      }
+
+      .quote {
+        font-size: 15px;
+        letter-spacing: 0.3px;
+        line-height: 1.9;
+      }
+
+      .details {
+        padding: 65px 18px;
+      }
+
+      .eyebrow {
+        letter-spacing: 2px;
+      }
+
+      .date {
+        font-size: 16px;
+        letter-spacing: 0.4px;
+      }
+
+      .info {
+        padding: 25px 15px;
+      }
+
+      .music {
+        right: 15px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    /*
+      ACCESSIBILITY
+    */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<!-- FIRST SECTION -->
+  <!-- HERO SECTION -->
 
-<section class="hero">
+  <section class="hero">
 
-  <div class="frame">
-
-    <div class="eyebrow">
-      A JOYFUL BEGINNING · FOREVER TOGETHER
-    </div>
-
-    <img
-      src="hs-monogram.png"
-      alt="H and S Wedding Monogram"
-      class="monogram"
-    >
-
-    <h1>
-      Wedding Registration Invitation
-    </h1>
-
-    <div class="names">
-      Zhonghong Chen
-      <span class="heart">♡</span>
-      Sepideh Mohajer
-    </div>
-
-    <p class="quote">
-      Two hearts, one promise<br>
-      A lifetime of love begins here<br>
-      We warmly invite you to share our special moment
-    </p>
-
-    <div class="date">
-      November 16, 2026 · Monday
-    </div>
-
-  </div>
-
-  <div class="scroll">
-    SCROLL DOWN · SHARE OUR JOY ↓
-  </div>
-
-</section>
-
-<!-- SECOND SECTION -->
-
-<section class="details">
-
-  <div class="container">
-
-    <div class="reveal">
+    <div class="frame">
 
       <div class="eyebrow">
-        OUR SPECIAL DAY
+        A JOYFUL BEGINNING · FOREVER TOGETHER
       </div>
 
-      <h2>
-        Hand in Hand, For a Lifetime
-      </h2>
+      <!-- H & S MONOGRAM -->
+
+      <img
+        src="hs-monogram.png"
+        alt="H and S Wedding Monogram"
+        class="monogram"
+      >
+
+      <h1>
+        Wedding Registration Invitation
+      </h1>
+
+      <div class="names">
+        Zhonghong Chen
+        <span class="heart">♡</span>
+        Sepideh Mohajer
+      </div>
 
       <p class="quote">
-        One home, two hearts, and a lifetime of seasons<br>
-        Through every journey and everyday moment<br>
-        Together, always
+        Two hearts, one promise<br>
+        A lifetime of love begins here<br>
+        We warmly invite you to share our special moment
       </p>
+
+      <div class="date">
+        November 16, 2026 · Monday
+      </div>
 
     </div>
 
-    <!-- COUPLE PORTRAIT -->
+    <div class="scroll">
+      SCROLL DOWN · SHARE OUR JOY ↓
+    </div>
 
-    <img
-      class="photo reveal"
-      src="couple.png"
-      alt="Wedding portrait of Zhonghong Chen and Sepideh Mohajer"
-    >
+  </section>
 
-    <!-- EVENT DETAILS -->
+  <!-- SECOND SECTION -->
 
-    <div class="info reveal">
+  <section class="details">
 
-      <strong>
-        With Love, We Invite You
-      </strong>
+    <div class="container">
 
-      <p>
-        We would be delighted to share this
-        joyful occasion with you.
-      </p>
+      <div class="reveal">
 
-      <strong>Date</strong>
+        <div class="eyebrow">
+          OUR SPECIAL DAY
+        </div>
 
-      <p>
-        Monday, November 16, 2026
-      </p>
+        <h2>
+          Hand in Hand, For a Lifetime
+        </h2>
 
-      <strong>
-        Registration Venue
-      </strong>
+        <p class="quote">
+          One home, two hearts, and a lifetime of seasons<br>
+          Through every journey and everyday moment<br>
+          Together, always
+        </p>
 
-      <p>
-        Henan Provincial Government Service Center,
-        1st Floor, Zone F
-      </p>
+      </div>
 
-      <strong>
-        Address
-      </strong>
+      <!-- COUPLE PORTRAIT -->
 
-      <p class="address">
-        South side of the road, 100 meters east of the
-        intersection of Nongye South Road and Xiangsheng Street,
-        Zhengdong New District, Zhengzhou, Henan, China.
-        (1st Floor, Zone F)
-      </p>
+      <img
+        class="photo reveal"
+        src="couple.png"
+        alt="Wedding portrait of Zhonghong Chen and Sepideh Mohajer"
+      >
+
+      <!-- INVITATION DETAILS -->
+
+      <div class="info reveal">
+
+        <strong>
+          With Love, We Invite You
+        </strong>
+
+        <p>
+          We would be delighted to share this
+          joyful occasion with you.
+        </p>
+
+        <strong>Date</strong>
+
+        <p>
+          Monday, November 16, 2026
+        </p>
+
+        <strong>
+          Registration Venue
+        </strong>
+
+        <p>
+          Henan Provincial Government Service Center,
+          1st Floor, Zone F
+        </p>
+
+        <strong>
+          Address
+        </strong>
+
+        <p class="address">
+          South side of the road, 100 meters east of the
+          intersection of Nongye South Road and Xiangsheng Street,
+          Zhengdong New District, Zhengzhou, Henan, China.
+          (1st Floor, Zone F)
+        </p>
+
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- FOOTER -->
 
-<!-- FOOTER -->
+  <footer class="footer">
 
-<footer class="footer">
+    <div style="
+      font-family: 'Great Vibes', cursive;
+      font-size: 38px;
+    ">
+      A Lifetime of Love · Forever as One
+    </div>
 
-  <div style="
-    font-family: 'Great Vibes', cursive;
-    font-size: 38px;
-  ">
-    A Lifetime of Love · Forever as One
-  </div>
+    <div>
+      Zhonghong Chen ♡ Sepideh Mohajer
+    </div>
 
-  <div>
-    Zhonghong Chen ♡ Sepideh Mohajer
-  </div>
+    <small>
+      2026.11.16
+    </small>
 
-  <small>
-    2026.11.16
-  </small>
+  </footer>
 
-</footer>
+  <!-- MUSIC BUTTON -->
 
-<!-- MUSIC BUTTON -->
-
-<button
-  class="music"
-  id="musicButton"
-  aria-label="Play or pause music"
->
-  ♫
-</button>
-
-<!-- WEDDING MUSIC -->
-
-<audio id="bgMusic" loop preload="none">
-  <source
-    src="wedding-music.mp3"
-    type="audio/mpeg"
+  <button
+    class="music"
+    id="musicButton"
+    aria-label="Play or pause music"
   >
-</audio>
+    ♫
+  </button>
 
-<script>
+  <!-- MUSIC FILE -->
 
-/* SCROLL REVEAL */
+  <audio id="bgMusic" loop preload="none">
+    <source
+      src="wedding-music.mp3"
+      type="audio/mpeg"
+    >
+  </audio>
 
-const observer = new IntersectionObserver(entries => {
+  <script>
 
-  entries.forEach(entry => {
+    /*
+      SCROLL REVEAL
+    */
 
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
+    const observer = new IntersectionObserver(entries => {
 
-  });
+      entries.forEach(entry => {
 
-}, {
-  threshold: 0.12
-});
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
 
-document.querySelectorAll(".reveal")
-  .forEach(el => observer.observe(el));
+      });
 
-/* MUSIC CONTROL */
+    }, {
+      threshold: 0.12
+    });
 
-const music = document.getElementById("bgMusic");
-const button = document.getElementById("musicButton");
+    document.querySelectorAll(".reveal")
+      .forEach(el => observer.observe(el));
 
-button.addEventListener("click", async () => {
+    /*
+      MUSIC CONTROL
+    */
 
-  if (!music.paused) {
-    music.pause();
-    button.textContent = "♫";
-    return;
-  }
+    const music = document.getElementById("bgMusic");
+    const button = document.getElementById("musicButton");
 
-  try {
-    await music.play();
-    button.textContent = "Ⅱ";
-  } catch (e) {
-    alert(
-      "Music could not be played. Please check wedding-music.mp3."
-    );
-  }
+    button.addEventListener("click", async () => {
 
-});
+      if (!music.paused) {
+        music.pause();
+        button.textContent = "♫";
+        return;
+      }
 
-</script>
+      try {
+        await music.play();
+        button.textContent = "Ⅱ";
+      } catch (e) {
+        alert(
+          "Music could not be played. Please check wedding-music.mp3."
+        );
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
