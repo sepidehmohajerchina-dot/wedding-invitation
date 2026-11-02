@@ -3,755 +3,762 @@
 <html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#650a16">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#650a16">
 
-  <title>陈中洪 & 林小妤 · 喜结良缘</title>
+<title>陈中洪 & 林小妤 · 喜结良缘</title>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+<link
+  href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
 
-  <style>
+<style>
 
-    /* =========================
-       COLORS
-    ========================= */
+/* ==============================
+   COLORS
+============================== */
 
-    :root {
-      --gold: #f6d99a;
-      --darkgold: #b77a35;
-      --cream: #fff1cf;
-      --red: #650a16;
-    }
+:root {
+  --gold: #f6d99a;
+  --darkgold: #b77a35;
+  --cream: #fff1cf;
+  --red: #650a16;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--red);
-    }
+html {
+  scroll-behavior: smooth;
+  background-color: var(--red);
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      position: relative;
-      isolation: isolate;
-      overflow-x: hidden;
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
 
-      color: var(--cream);
-      font-family: "Noto Serif SC", serif;
-      background-color: var(--red);
-    }
+  color: var(--cream);
+  font-family: "Noto Serif SC", serif;
+  background-color: var(--red);
+}
 
-    /* =========================
-       DESKTOP FLORAL BACKGROUND
-    ========================= */
+/* ==============================
+   DESKTOP BACKGROUND
+============================== */
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 
-      background-color: var(--red);
-      background-image: url("wedding-background.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-    }
+  background-color: var(--red);
+  background-image: url("wedding-background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 
-    /* =========================
-       TRANSPARENT SECTIONS
-    ========================= */
+/* ==============================
+   TRANSPARENT SECTIONS
+============================== */
 
-    .hero,
-    .details,
-    .footer {
-      position: relative;
-      background: transparent;
-      background-image: none;
-    }
+.hero,
+.details,
+.footer {
+  position: relative;
+  background: transparent;
+  background-image: none;
+}
 
-    section {
-      overflow: visible;
-    }
+section {
+  overflow: visible;
+}
 
-    /* =========================
-       FIRST SECTION
-    ========================= */
+/* ==============================
+   HERO SECTION
+============================== */
 
-    .hero {
-      min-height: 100svh;
+.hero {
+  min-height: 100svh;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-      padding: 65px 22px 55px;
-      text-align: center;
-    }
+  padding: 65px 22px 55px;
+  text-align: center;
+}
 
-    /* =========================
-       GOLDEN FRAME
-    ========================= */
+/* ==============================
+   GOLDEN FRAME
+============================== */
 
-    .frame {
-      position: relative;
-      z-index: 1;
+.frame {
+  position: relative;
+  z-index: 1;
 
-      width: min(100%, 650px);
-      padding: 48px 22px;
+  width: min(100%, 650px);
+  padding: 48px 22px;
 
-      border: 2px solid var(--gold);
-      outline: 1px solid #c99755;
-      outline-offset: 8px;
+  border: 2px solid var(--gold);
+  outline: 1px solid #c99755;
+  outline-offset: 8px;
 
-      border-radius:
-        48% 48% 18px 18px /
-        65px 65px 18px 18px;
+  border-radius:
+    48% 48% 18px 18px /
+    65px 65px 18px 18px;
 
-      background: rgba(75, 0, 12, 0.10);
+  background: rgba(75, 0, 12, 0.10);
 
-      box-shadow:
-        inset 0 0 0 8px #8e1c2a,
-        inset 0 0 0 9px #d7a85c,
-        0 18px 60px #26000666;
-    }
+  box-shadow:
+    inset 0 0 0 8px #8e1c2a,
+    inset 0 0 0 9px #d7a85c,
+    0 18px 60px #26000666;
+}
 
-    .frame::before,
-    .frame::after {
-      content: "❀  ❈  ❀";
+.frame::before,
+.frame::after {
+  content: "❀  ❈  ❀";
 
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 
-      color: var(--gold);
-      font-size: 22px;
-      letter-spacing: 10px;
-      white-space: nowrap;
-    }
+  color: var(--gold);
+  font-size: 22px;
+  letter-spacing: 10px;
+  white-space: nowrap;
+}
 
-    .frame::before {
-      top: 11px;
-    }
+.frame::before {
+  top: 11px;
+}
 
-    .frame::after {
-      bottom: 10px;
-    }
+.frame::after {
+  bottom: 10px;
+}
 
-    /* =========================
-       SMALL HEADING
-    ========================= */
+/* ==============================
+   SMALL HEADING
+============================== */
 
-    .eyebrow {
-      font-size: 13px;
-      letter-spacing: 5px;
-      line-height: 1.6;
-      color: #ffdfaa;
-    }
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 5px;
+  line-height: 1.6;
+  color: #ffdfaa;
+}
 
-    /* =========================
-       LUXURY GOLDEN 囍
-       Chinese Calligraphy
-    ========================= */
+/* ==============================
+   BRIGHT GOLDEN 囍
+   Metallic Gold + Animated Glow
+============================== */
 
-    .xi {
-      font-family: "Ma Shan Zheng", cursive;
-      font-size: 110px;
-      font-weight: 400;
-      line-height: 1.3;
+.xi {
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 115px;
+  font-weight: 400;
+  line-height: 1.3;
 
-      display: inline-block;
+  display: inline-block;
 
-      color: #f6d99a;
+  color: #ffd700;
 
-      background: linear-gradient(
-        135deg,
-        #fff5cf 0%,
-        #f9df9a 25%,
-        #c58b38 45%,
-        #ffe9ad 65%,
-        #b77a35 85%,
-        #fff1c4 100%
+  background: linear-gradient(
+    160deg,
+    #fffce8 0%,
+    #fff0a6 15%,
+    #ffd700 35%,
+    #ffb900 48%,
+    #fff3b0 60%,
+    #ffd700 78%,
+    #fff6d0 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter:
+    drop-shadow(0 0 5px rgba(255,215,0,0.55))
+    drop-shadow(0 0 14px rgba(255,190,0,0.35));
+
+  animation:
+    goldShine 3s ease-in-out infinite alternate;
+}
+
+@keyframes goldShine {
+  from {
+    filter:
+      drop-shadow(
+        0 0 4px rgba(255,215,0,0.35)
       );
+  }
 
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      filter: drop-shadow(
-        0 3px 5px rgba(0, 0, 0, 0.35)
+  to {
+    filter:
+      drop-shadow(
+        0 0 10px rgba(255,215,0,0.85)
+      )
+      drop-shadow(
+        0 0 22px rgba(255,190,0,0.45)
       );
+  }
+}
+
+/* ==============================
+   CHINESE TITLES
+============================== */
+
+h1,
+h2 {
+  font-family: "Ma Shan Zheng", cursive;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(38px, 8vw, 64px);
+  margin: 4px 0 12px;
+  line-height: 1.4;
+}
+
+.names {
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: clamp(31px, 7vw, 48px);
+  line-height: 1.7;
+  color: #ffe5af;
+}
+
+.heart {
+  display: inline-block;
+  padding: 0 3px;
+
+  font-size: 24px;
+  color: #ffc6ac;
+}
+
+.quote {
+  font-size: 15px;
+  line-height: 2.4;
+  letter-spacing: 2px;
+}
+
+.date {
+  margin-top: 25px;
+
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #ffe0a4;
+}
+
+.scroll {
+  margin-top: 40px;
+
+  font-size: 13px;
+  letter-spacing: 3px;
+
+  animation: float 2s infinite;
+}
+
+/* ==============================
+   DETAILS SECTION
+============================== */
+
+.details {
+  padding: 80px 20px 100px;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+
+  max-width: 700px;
+  margin: auto;
+}
+
+.details h2 {
+  font-size: 48px;
+  color: var(--gold);
+  margin: 10px 0 25px;
+}
 
-      animation:
-        glow 3s ease-in-out infinite alternate;
-    }
-
-    /* =========================
-       CHINESE TITLES
-    ========================= */
-
-    h1,
-    h2 {
-      font-family: "Ma Shan Zheng", cursive;
-      font-weight: 400;
-    }
-
-    h1 {
-      font-size: clamp(38px, 8vw, 64px);
-      margin: 4px 0 12px;
-      line-height: 1.4;
-    }
+/* ==============================
+   COUPLE PHOTO
+============================== */
+
+.photo {
+  display: block;
+
+  width: 100%;
+  max-width: 520px;
+
+  margin: 28px auto;
+
+  border: 8px solid #a66b36;
+  outline: 2px solid #f6d99a;
+  outline-offset: 5px;
+
+  border-radius:
+    180px 180px 12px 12px /
+    80px 80px 12px 12px;
+
+  box-shadow: 0 18px 55px #18000899;
+}
+
+/* ==============================
+   INVITATION DETAILS
+============================== */
 
-    .names {
-      font-family: "Ma Shan Zheng", cursive;
-      font-size: clamp(31px, 7vw, 48px);
-      line-height: 1.7;
-      color: #ffe5af;
-    }
-
-    .heart {
-      display: inline-block;
-      padding: 0 3px;
-
-      font-size: 24px;
-      color: #ffc6ac;
-    }
-
-    .quote {
-      font-size: 15px;
-      line-height: 2.4;
-      letter-spacing: 2px;
-    }
-
-    .date {
-      margin-top: 25px;
-
-      font-size: 18px;
-      letter-spacing: 2px;
-      color: #ffe0a4;
-    }
-
-    .scroll {
-      margin-top: 40px;
-
-      font-size: 13px;
-      letter-spacing: 3px;
-
-      animation: float 2s infinite;
-    }
-
-    /* =========================
-       SECOND SECTION
-    ========================= */
-
-    .details {
-      padding: 80px 20px 100px;
-      text-align: center;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .details h2 {
-      font-size: 48px;
-      color: var(--gold);
-      margin: 10px 0 25px;
-    }
-
-    /* =========================
-       COUPLE PHOTO
-    ========================= */
-
-    .photo {
-      display: block;
-
-      width: 100%;
-      max-width: 520px;
-
-      margin: 28px auto;
-
-      border: 8px solid #a66b36;
-      outline: 2px solid #f6d99a;
-      outline-offset: 5px;
-
-      border-radius:
-        180px 180px 12px 12px /
-        80px 80px 12px 12px;
-
-      box-shadow: 0 18px 55px #18000899;
-    }
-
-    /* =========================
-       EVENT INFORMATION
-    ========================= */
-
-    .info {
-      margin-top: 40px;
-      padding: 30px 22px;
-
-      border: 1px solid #e7b96f;
-      border-radius: 18px;
-
-      background: rgba(91, 13, 26, 0.82);
-      line-height: 2.4;
-    }
-
-    .info strong {
-      color: var(--gold);
-      font-size: 21px;
-    }
-
-    .address {
-      font-size: 15px;
-      overflow-wrap: anywhere;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    .footer {
-      padding: 45px 20px;
-      text-align: center;
-
-      color: var(--gold);
-      line-height: 2;
-    }
-
-    .footer-message {
-      font-family: "Ma Shan Zheng", cursive;
-      font-size: 34px;
-    }
-
-    /* =========================
-       MUSIC BUTTON
-    ========================= */
-
-    .music {
-      position: fixed;
-
-      right: 20px;
-      bottom: 24px;
-      z-index: 20;
-
-      width: 56px;
-      height: 56px;
-
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-
-      background: #780f20;
-      color: var(--gold);
-
-      font-size: 25px;
-      cursor: pointer;
-
-      box-shadow: 0 5px 25px #0006;
-    }
-
-    /* =========================
-       SCROLL ANIMATION
-    ========================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-
-      transition:
-        opacity 1s,
-        transform 1s;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @keyframes glow {
-      from {
-        filter: brightness(0.9);
-      }
-
-      to {
-        filter: brightness(1.3);
-      }
-    }
-
-    @keyframes float {
-      50% {
-        transform: translateY(10px);
-      }
-    }
-
-    /* =========================
-       MOBILE VERSION
-       Vertical Floral Background
-    ========================= */
-
-    @media (max-width: 600px) {
-
-      body::before {
-        background-color: #650a16;
-        background-image: url("wedding-mobile.png");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-
-      .hero,
-      .details,
-      .footer {
-        background: transparent;
-        background-image: none;
-      }
-
-      .hero {
-        min-height: 100svh;
-        padding: 50px 18px 45px;
-      }
-
-      .frame {
-        width: 100%;
-        padding: 42px 15px;
-      }
-
-      .xi {
-        font-size: 100px;
-      }
-
-      h1 {
-        font-size: clamp(36px, 9vw, 50px);
-      }
-
-      .names {
-        font-size: clamp(29px, 7vw, 40px);
-        line-height: 1.6;
-      }
-
-      .quote {
-        font-size: 13px;
-        line-height: 2.2;
-        letter-spacing: 1px;
-      }
-
-      .date {
-        font-size: 16px;
-        letter-spacing: 1px;
-      }
-
-      .eyebrow {
-        letter-spacing: 2px;
-      }
-
-      .scroll {
-        font-size: 11px;
-        letter-spacing: 2px;
-      }
-
-      .details {
-        padding: 65px 18px;
-      }
-
-      .details h2 {
-        font-size: clamp(36px, 9vw, 48px);
-      }
-
-      .info {
-        padding: 25px 15px;
-      }
-
-      .footer {
-        padding: 35px 15px 50px;
-      }
-
-      .music {
-        right: 16px;
-        bottom: 20px;
-
-        width: 50px;
-        height: 50px;
-      }
-
-    }
-
-    /* =========================
-       ACCESSIBILITY
-    ========================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-
-    }
-
-  </style>
+.info {
+  margin-top: 40px;
+  padding: 30px 22px;
+
+  border: 1px solid #e7b96f;
+  border-radius: 18px;
+
+  background: rgba(91,13,26,0.82);
+  line-height: 2.4;
+}
+
+.info strong {
+  color: var(--gold);
+  font-size: 21px;
+}
+
+.address {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer {
+  padding: 45px 20px;
+  text-align: center;
+
+  color: var(--gold);
+  line-height: 2;
+}
+
+.footer-message {
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 34px;
+}
+
+/* ==============================
+   MUSIC BUTTON
+============================== */
+
+.music {
+  position: fixed;
+
+  right: 20px;
+  bottom: 24px;
+  z-index: 20;
+
+  width: 56px;
+  height: 56px;
+
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+
+  background: #780f20;
+  color: var(--gold);
+
+  font-size: 25px;
+  cursor: pointer;
+
+  box-shadow: 0 5px 25px #0006;
+}
+
+/* ==============================
+   SCROLL REVEAL
+============================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 1s,
+    transform 1s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ==============================
+   ANIMATIONS
+============================== */
+
+@keyframes float {
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* ==============================
+   MOBILE VERSION
+============================== */
+
+@media (max-width: 600px) {
+
+  body::before {
+    background-color: #650a16;
+    background-image: url("wedding-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .hero,
+  .details,
+  .footer {
+    background: transparent;
+    background-image: none;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 50px 18px 45px;
+  }
+
+  .frame {
+    width: 100%;
+    padding: 42px 15px;
+  }
+
+  .xi {
+    font-size: 105px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 9vw, 50px);
+  }
+
+  .names {
+    font-size: clamp(29px, 7vw, 40px);
+    line-height: 1.6;
+  }
+
+  .quote {
+    font-size: 13px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+  }
+
+  .date {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .eyebrow {
+    letter-spacing: 2px;
+  }
+
+  .scroll {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .details {
+    padding: 65px 18px;
+  }
+
+  .details h2 {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .info {
+    padding: 25px 15px;
+  }
+
+  .footer {
+    padding: 35px 15px 50px;
+  }
+
+  .music {
+    right: 16px;
+    bottom: 20px;
+
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* ==============================
+   REDUCED MOTION
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       FIRST SECTION
-  ========================= -->
+<!-- ==============================
+     FIRST SECTION
+============================== -->
 
-  <section class="hero">
+<section class="hero">
 
-    <div class="frame">
+  <div class="frame">
+
+    <div class="eyebrow">
+      良辰吉日 · 喜结良缘
+    </div>
+
+    <div class="xi">
+      囍
+    </div>
+
+    <h1>
+      结婚登记邀请函
+    </h1>
+
+    <div class="names">
+      陈中洪
+      <span class="heart">♡</span>
+      林小妤
+    </div>
+
+    <p class="quote">
+      两姓联姻，一堂缔约<br>
+      良缘永结，匹配同称<br>
+      诚邀您见证我们的幸福时刻
+    </p>
+
+    <div class="date">
+      2026年11月16日 · 星期一
+    </div>
+
+  </div>
+
+  <div class="scroll">
+    向下滑动 · 开启幸福 ↓
+  </div>
+
+</section>
+
+<!-- ==============================
+     SECOND SECTION
+============================== -->
+
+<section class="details">
+
+  <div class="container">
+
+    <div class="reveal">
 
       <div class="eyebrow">
-        良辰吉日 · 喜结良缘
+        OUR SPECIAL DAY
       </div>
 
-      <!-- GOLDEN CALLIGRAPHY 囍 -->
-
-      <div class="xi">
-        囍
-      </div>
-
-      <h1>
-        结婚登记邀请函
-      </h1>
-
-      <div class="names">
-        陈中洪
-        <span class="heart">♡</span>
-        林小妤
-      </div>
+      <h2>
+        执子之手 · 与子偕老
+      </h2>
 
       <p class="quote">
-        两姓联姻，一堂缔约<br>
-        良缘永结，匹配同称<br>
-        诚邀您见证我们的幸福时刻
+        从此一屋两人，三餐四季<br>
+        山河远阔，人间烟火<br>
+        皆与你共度
       </p>
 
-      <div class="date">
-        2026年11月16日 · 星期一
-      </div>
-
     </div>
 
-    <div class="scroll">
-      向下滑动 · 开启幸福 ↓
-    </div>
+    <!-- COUPLE PHOTO -->
 
-  </section>
-
-  <!-- =========================
-       SECOND SECTION
-  ========================= -->
-
-  <section class="details">
-
-    <div class="container">
-
-      <div class="reveal">
-
-        <div class="eyebrow">
-          OUR SPECIAL DAY
-        </div>
-
-        <h2>
-          执子之手 · 与子偕老
-        </h2>
-
-        <p class="quote">
-          从此一屋两人，三餐四季<br>
-          山河远阔，人间烟火<br>
-          皆与你共度
-        </p>
-
-      </div>
-
-      <!-- COUPLE PHOTO -->
-
-      <img
-        class="photo reveal"
-        src="couple.png"
-        alt="陈中洪与林小妤的合影"
-      >
-
-      <!-- INVITATION INFORMATION -->
-
-      <div class="info reveal">
-
-        <strong>
-          诚挚邀请
-        </strong>
-
-        <p>
-          愿与您共同分享这份喜悦
-        </p>
-
-        <strong>
-          日期
-        </strong>
-
-        <p>
-          2026年11月16日 星期一
-        </p>
-
-        <strong>
-          登记地点
-        </strong>
-
-        <p>
-          河南省政务服务中心一楼F区
-        </p>
-
-        <strong>
-          详细地址
-        </strong>
-
-        <p class="address">
-          郑州市郑东新区农业南路与祥盛街交叉口
-          向东100米路南，省政务服务中心一楼F区。
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer class="footer">
-
-    <div class="footer-message">
-      百年好合 · 永结同心
-    </div>
-
-    <div>
-      陈中洪 ♡ 林小妤
-    </div>
-
-    <small>
-      2026.11.16
-    </small>
-
-  </footer>
-
-  <!-- =========================
-       MUSIC BUTTON
-  ========================= -->
-
-  <button
-    class="music"
-    id="musicButton"
-    type="button"
-    aria-label="播放或暂停音乐"
-  >
-    ♫
-  </button>
-
-  <audio
-    id="bgMusic"
-    loop
-    preload="none"
-  >
-    <source
-      src="wedding-music.mp3"
-      type="audio/mpeg"
+    <img
+      class="photo reveal"
+      src="couple.png"
+      alt="陈中洪与林小妤的合影"
     >
-  </audio>
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+    <!-- EVENT INFORMATION -->
 
-  <script>
+    <div class="info reveal">
 
-    /* SCROLL REVEAL */
+      <strong>
+        诚挚邀请
+      </strong>
 
-    if ("IntersectionObserver" in window) {
+      <p>
+        愿与您共同分享这份喜悦
+      </p>
 
-      const observer = new IntersectionObserver(
-        entries => {
+      <strong>
+        日期
+      </strong>
 
-          entries.forEach(entry => {
+      <p>
+        2026年11月16日 星期一
+      </p>
 
-            if (entry.isIntersecting) {
+      <strong>
+        登记地点
+      </strong>
 
-              entry.target.classList.add("visible");
+      <p>
+        河南省政务服务中心一楼F区
+      </p>
 
-              observer.unobserve(entry.target);
+      <strong>
+        详细地址
+      </strong>
 
-            }
+      <p class="address">
+        郑州市郑东新区农业南路与祥盛街交叉口
+        向东100米路南，省政务服务中心一楼F区。
+      </p>
 
-          });
+    </div>
 
-        },
-        {
-          threshold: 0.12
+  </div>
+
+</section>
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer class="footer">
+
+  <div class="footer-message">
+    百年好合 · 永结同心
+  </div>
+
+  <div>
+    陈中洪 ♡ 林小妤
+  </div>
+
+  <small>
+    2026.11.16
+  </small>
+
+</footer>
+
+<!-- ==============================
+     MUSIC BUTTON
+============================== -->
+
+<button
+  class="music"
+  id="musicButton"
+  type="button"
+  aria-label="播放或暂停音乐"
+>
+  ♫
+</button>
+
+<audio
+  id="bgMusic"
+  loop
+  preload="none"
+>
+  <source
+    src="wedding-music.mp3"
+    type="audio/mpeg"
+  >
+</audio>
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
+<script>
+
+/* SCROLL REVEAL */
+
+if ("IntersectionObserver" in window) {
+
+  const observer = new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+
         }
-      );
 
-      document.querySelectorAll(".reveal")
-        .forEach(el => observer.observe(el));
+      });
 
-    } else {
-
-      document.querySelectorAll(".reveal")
-        .forEach(el => el.classList.add("visible"));
-
+    },
+    {
+      threshold: 0.12
     }
+  );
 
-    /* MUSIC CONTROL */
+  document.querySelectorAll(".reveal")
+    .forEach(el => observer.observe(el));
 
-    const music = document.getElementById("bgMusic");
-    const button = document.getElementById("musicButton");
+} else {
 
-    button.addEventListener("click", async () => {
+  document.querySelectorAll(".reveal")
+    .forEach(el => el.classList.add("visible"));
 
-      if (!music.paused) {
+}
 
-        music.pause();
-        button.textContent = "♫";
+/* MUSIC CONTROL */
 
-        return;
+const music = document.getElementById("bgMusic");
+const button = document.getElementById("musicButton");
 
-      }
+button.addEventListener("click", async () => {
 
-      try {
+  if (!music.paused) {
 
-        await music.play();
-        button.textContent = "Ⅱ";
+    music.pause();
+    button.textContent = "♫";
+    return;
 
-      } catch (error) {
+  }
 
-        alert("无法播放音乐，请检查 wedding-music.mp3 文件。");
+  try {
 
-      }
+    await music.play();
+    button.textContent = "Ⅱ";
 
-    });
+  } catch (error) {
 
-  </script>
+    alert("无法播放音乐，请检查 wedding-music.mp3 文件。");
+
+  }
+
+});
+
+</script>
 
 </body>
 </html>
