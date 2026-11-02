@@ -27,59 +27,47 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: #650a16;
     }
 
     body {
       margin: 0;
-      min-height: 100vh;
-      position: relative;
       color: var(--cream);
       font-family: "Cormorant Garamond", Georgia, serif;
-      background-color: #650a16;
+      background-color: var(--red);
+      overflow-x: hidden;
+      position: relative;
+      isolation: isolate;
     }
 
     /*
-      ONE FLORAL BACKGROUND FOR THE ENTIRE PAGE
+      ONE CONTINUOUS FLORAL BACKGROUND
 
-      The background is fixed behind the content.
-      It does not restart at section boundaries.
+      The image is fitted to the full screen width.
+      It is not cropped horizontally on mobile.
+
+      A single fixed background is used for all
+      sections to prevent visible seams.
     */
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: 0;
+      z-index: -1;
       pointer-events: none;
 
-      background-color: #650a16;
+      background-color: var(--red);
       background-image: url("wedding-background.png");
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position: center top;
       background-size: cover;
     }
 
-    /*
-      ALL PAGE SECTIONS ARE TRANSPARENT
-    */
-
-    .hero,
-    .details,
-    .footer {
-      position: relative;
-      z-index: 1;
-      background: transparent;
-      background-image: none;
-    }
-
     section {
+      position: relative;
       overflow: visible;
+      background: transparent;
     }
-
-    /*
-      HERO SECTION
-    */
 
     .hero {
       min-height: 100svh;
@@ -89,14 +77,12 @@
       justify-content: center;
       padding: 65px 22px 55px;
       text-align: center;
+      background: transparent;
     }
-
-    /*
-      GOLDEN DECORATIVE FRAME
-    */
 
     .frame {
       position: relative;
+      z-index: 1;
       width: min(100%, 650px);
       padding: 48px 22px;
 
@@ -108,12 +94,12 @@
         48% 48% 18px 18px /
         65px 65px 18px 18px;
 
+      background: rgba(75, 0, 12, 0.10);
+
       box-shadow:
         inset 0 0 0 8px #8e1c2a,
         inset 0 0 0 9px #d7a85c,
         0 18px 60px #26000666;
-
-      background: rgba(75, 0, 12, 0.08);
     }
 
     .frame::before,
@@ -136,19 +122,14 @@
       bottom: 10px;
     }
 
-    /*
-      SMALL HEADING
-    */
-
     .eyebrow {
       font-size: 13px;
       letter-spacing: 5px;
       color: #ffdfaa;
+      line-height: 1.6;
     }
 
-    /*
-      H & S MONOGRAM
-    */
+    /* GOLDEN H & S MONOGRAM */
 
     .monogram {
       display: block;
@@ -158,10 +139,6 @@
       margin: 12px auto 18px;
       object-fit: contain;
     }
-
-    /*
-      ENGLISH CALLIGRAPHY
-    */
 
     h1,
     h2 {
@@ -185,6 +162,8 @@
     .heart {
       font-size: 24px;
       color: #ffc6ac;
+      display: inline-block;
+      padding: 0 3px;
     }
 
     .quote {
@@ -200,10 +179,6 @@
       color: #ffe0a4;
     }
 
-    /*
-      SCROLL MESSAGE
-    */
-
     .scroll {
       margin-top: 40px;
       font-size: 13px;
@@ -211,17 +186,15 @@
       animation: float 2s infinite;
     }
 
-    /*
-      DETAILS SECTION
-    */
-
     .details {
       padding: 80px 20px 100px;
       text-align: center;
+      background: transparent;
     }
 
     .container {
       position: relative;
+      z-index: 1;
       max-width: 700px;
       margin: auto;
     }
@@ -231,10 +204,6 @@
       color: var(--gold);
       margin: 10px 0 25px;
     }
-
-    /*
-      COUPLE PHOTO
-    */
 
     .photo {
       width: 100%;
@@ -253,17 +222,12 @@
       box-shadow: 0 18px 55px #18000899;
     }
 
-    /*
-      EVENT INFORMATION
-    */
-
     .info {
       border: 1px solid #e7b96f;
       border-radius: 18px;
       padding: 30px 22px;
       margin-top: 40px;
-
-      background: rgba(75, 0, 12, 0.76);
+      background: rgba(91, 13, 26, 0.82);
       line-height: 2.4;
     }
 
@@ -277,20 +241,17 @@
       overflow-wrap: anywhere;
     }
 
-    /*
-      FOOTER
-    */
-
     .footer {
       padding: 45px 20px;
       text-align: center;
       color: var(--gold);
       line-height: 2;
+      background: transparent;
+      position: relative;
+      z-index: 1;
     }
 
-    /*
-      MUSIC BUTTON
-    */
+    /* MUSIC BUTTON */
 
     .music {
       position: fixed;
@@ -312,14 +273,11 @@
       box-shadow: 0 5px 25px #0006;
     }
 
-    /*
-      SCROLL ANIMATIONS
-    */
+    /* SCROLL ANIMATION */
 
     .reveal {
       opacity: 0;
       transform: translateY(35px);
-
       transition:
         opacity 1s,
         transform 1s;
@@ -337,30 +295,45 @@
     }
 
     /*
-      MOBILE DESIGN
+      MOBILE VERSION
+
+      The floral image is fitted to the full
+      screen width, preserving both side flowers.
+
+      No background image is assigned separately
+      to hero, details, or footer.
     */
 
     @media (max-width: 600px) {
 
-      /*
-        Keep the floral background continuous.
-        No repeat-y and no individual section images.
-      */
+      body {
+        background-color: #650a16;
+      }
 
       body::before {
         background-image: url("wedding-background.png");
         background-color: #650a16;
         background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
+        background-position: center top;
+        background-size: 100% auto;
+      }
+
+      .hero,
+      .details,
+      .footer {
+        background: transparent !important;
+        background-image: none !important;
       }
 
       .hero {
+        min-height: 100svh;
         padding: 50px 18px 45px;
       }
 
       .frame {
         padding: 42px 15px;
+        width: 100%;
+        background: rgba(75, 0, 12, 0.08);
       }
 
       .monogram {
@@ -375,6 +348,7 @@
 
       .names {
         font-size: clamp(26px, 7vw, 36px);
+        line-height: 1.55;
       }
 
       .quote {
@@ -400,8 +374,17 @@
         padding: 25px 15px;
       }
 
+      .scroll {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      .footer {
+        padding: 35px 15px 50px;
+      }
+
       .music {
-        right: 15px;
+        right: 16px;
         bottom: 20px;
         width: 50px;
         height: 50px;
@@ -409,7 +392,7 @@
     }
 
     /*
-      ACCESSIBILITY
+      REDUCED MOTION ACCESSIBILITY
     */
 
     @media (prefers-reduced-motion: reduce) {
@@ -427,13 +410,12 @@
         transform: none;
       }
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- FIRST SECTION -->
 
   <section class="hero">
 
@@ -442,8 +424,6 @@
       <div class="eyebrow">
         A JOYFUL BEGINNING · FOREVER TOGETHER
       </div>
-
-      <!-- H & S MONOGRAM -->
 
       <img
         src="hs-monogram.png"
@@ -503,7 +483,7 @@
 
       </div>
 
-      <!-- COUPLE PORTRAIT -->
+      <!-- COUPLE PHOTO -->
 
       <img
         class="photo reveal"
@@ -511,7 +491,7 @@
         alt="Wedding portrait of Zhonghong Chen and Sepideh Mohajer"
       >
 
-      <!-- INVITATION DETAILS -->
+      <!-- EVENT INFORMATION -->
 
       <div class="info reveal">
 
@@ -535,13 +515,11 @@
         </strong>
 
         <p>
-          Henan Provincial Government Service Center,
+          Henan Provincial Government Service Center,<br>
           1st Floor, Zone F
         </p>
 
-        <strong>
-          Address
-        </strong>
+        <strong>Address</strong>
 
         <p class="address">
           South side of the road, 100 meters east of the
@@ -560,10 +538,12 @@
 
   <footer class="footer">
 
-    <div style="
-      font-family: 'Great Vibes', cursive;
-      font-size: 38px;
-    ">
+    <div
+      style="
+        font-family: 'Great Vibes', cursive;
+        font-size: 38px;
+      "
+    >
       A Lifetime of Love · Forever as One
     </div>
 
@@ -577,71 +557,97 @@
 
   </footer>
 
-  <!-- MUSIC BUTTON -->
+  <!-- MUSIC -->
 
   <button
     class="music"
     id="musicButton"
+    type="button"
     aria-label="Play or pause music"
   >
     ♫
   </button>
 
-  <!-- MUSIC FILE -->
-
-  <audio id="bgMusic" loop preload="none">
+  <audio
+    id="bgMusic"
+    loop
+    preload="none"
+  >
     <source
       src="wedding-music.mp3"
       type="audio/mpeg"
     >
   </audio>
 
+  <!-- JAVASCRIPT -->
+
   <script>
 
-    /*
-      SCROLL REVEAL
-    */
+    /* SCROLL REVEAL */
 
-    const observer = new IntersectionObserver(entries => {
+    if ("IntersectionObserver" in window) {
 
-      entries.forEach(entry => {
+      const observer = new IntersectionObserver(
+        entries => {
 
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
         }
+      );
 
-      });
+      document.querySelectorAll(".reveal")
+        .forEach(el => observer.observe(el));
 
-    }, {
-      threshold: 0.12
-    });
+    } else {
 
-    document.querySelectorAll(".reveal")
-      .forEach(el => observer.observe(el));
+      document.querySelectorAll(".reveal")
+        .forEach(el => el.classList.add("visible"));
 
-    /*
-      MUSIC CONTROL
-    */
+    }
+
+    /* MUSIC CONTROL */
 
     const music = document.getElementById("bgMusic");
+
     const button = document.getElementById("musicButton");
 
     button.addEventListener("click", async () => {
 
       if (!music.paused) {
+
         music.pause();
+
         button.textContent = "♫";
+
         return;
+
       }
 
       try {
+
         await music.play();
+
         button.textContent = "Ⅱ";
-      } catch (e) {
+
+      } catch (error) {
+
         alert(
           "Music could not be played. Please check wedding-music.mp3."
         );
+
       }
 
     });
