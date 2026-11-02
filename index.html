@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,31 +8,21 @@
 
 <title>陈中洪 & 林小妤 · 喜结良缘</title>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* ==============================
-   COLORS
-============================== */
-
 :root {
   --gold: #f6d99a;
-  --darkgold: #b77a35;
+  --gold-bright: #ffe6a1;
   --cream: #fff1cf;
   --red: #650a16;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--red);
+  background: var(--red);
 }
 
 body {
@@ -42,15 +31,12 @@ body {
   position: relative;
   isolation: isolate;
   overflow-x: hidden;
-
   color: var(--cream);
   font-family: "Noto Serif SC", serif;
-  background-color: var(--red);
+  background: var(--red);
 }
 
-/* ==============================
-   DESKTOP BACKGROUND
-============================== */
+/* ONE CONTINUOUS BACKGROUND */
 
 body::before {
   content: "";
@@ -58,98 +44,143 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-
-  background-color: var(--red);
-  background-image: url("wedding-background.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: var(--red) url("wedding-background.png")
+    center center / cover no-repeat;
 }
 
-/* ==============================
-   TRANSPARENT SECTIONS
-============================== */
-
-.hero,
-.details,
-.footer {
+.hero, .details, .footer {
   position: relative;
   background: transparent;
-  background-image: none;
 }
-
-section {
-  overflow: visible;
-}
-
-/* ==============================
-   HERO SECTION
-============================== */
 
 .hero {
   min-height: 100svh;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   padding: 65px 22px 55px;
   text-align: center;
 }
 
-/* ==============================
-   GOLDEN FRAME
-============================== */
+/* ORNATE GOLD FRAME */
 
 .frame {
   position: relative;
   z-index: 1;
-
   width: min(100%, 650px);
-  padding: 48px 22px;
-
-  border: 2px solid var(--gold);
+  padding: 65px 28px 65px;
+  border: 2px solid #f9d788;
   outline: 1px solid #c99755;
   outline-offset: 8px;
-
   border-radius:
-    48% 48% 18px 18px /
-    65px 65px 18px 18px;
-
+    48% 48% 25px 25px /
+    75px 75px 25px 25px;
   background: rgba(75, 0, 12, 0.10);
-
   box-shadow:
-    inset 0 0 0 8px #8e1c2a,
+    inset 0 0 0 7px rgba(110, 11, 24, .95),
     inset 0 0 0 9px #d7a85c,
+    inset 0 0 0 13px rgba(255, 221, 148, .12),
     0 18px 60px #26000666;
 }
 
-.frame::before,
-.frame::after {
-  content: "❀  ❈  ❀";
+/* INNER GOLDEN LINE */
 
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255, 220, 140, .85);
+  border-radius:
+    48% 48% 18px 18px /
+    65px 65px 18px 18px;
+  pointer-events: none;
+}
+
+/* TOP AND BOTTOM FLORAL ORNAMENTS */
+
+.ornament-top,
+.ornament-bottom {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
-  color: var(--gold);
-  font-size: 22px;
-  letter-spacing: 10px;
+  z-index: 2;
+  color: #ffdf94;
+  text-shadow:
+    0 0 6px rgba(255, 208, 95, .55),
+    0 2px 4px rgba(60, 0, 0, .6);
   white-space: nowrap;
+  pointer-events: none;
 }
 
-.frame::before {
-  top: 11px;
+.ornament-top {
+  top: -20px;
+  font-size: 34px;
 }
 
-.frame::after {
-  bottom: 10px;
+.ornament-bottom {
+  bottom: -22px;
+  font-size: 34px;
 }
 
-/* ==============================
-   SMALL HEADING
-============================== */
+/* SIDE FLORAL VINES */
+
+.side-ornament {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f7cf7a;
+  font-size: 30px;
+  line-height: 1.5;
+  text-shadow: 0 0 8px rgba(255, 215, 100, .5);
+  pointer-events: none;
+}
+
+.side-ornament.left {
+  left: -18px;
+}
+
+.side-ornament.right {
+  right: -18px;
+}
+
+/* GOLD DIVIDER */
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: min(80%, 360px);
+  margin: 18px auto;
+  color: #ffe09b;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffda83,
+    #b47b35
+  );
+}
+
+.gold-divider::after {
+  transform: rotate(180deg);
+}
+
+.gold-divider span {
+  font-size: 24px;
+  line-height: 1;
+  text-shadow: 0 0 8px #ffd56b66;
+}
+
+/* TYPOGRAPHY */
 
 .eyebrow {
   font-size: 13px;
@@ -158,69 +189,7 @@ section {
   color: #ffdfaa;
 }
 
-/* ==============================
-   BRIGHT GOLDEN 囍
-   Metallic Gold + Animated Glow
-============================== */
-
-.xi {
-  font-family: "Ma Shan Zheng", cursive;
-  font-size: 115px;
-  font-weight: 400;
-  line-height: 1.3;
-
-  display: inline-block;
-
-  color: #ffd700;
-
-  background: linear-gradient(
-    160deg,
-    #fffce8 0%,
-    #fff0a6 15%,
-    #ffd700 35%,
-    #ffb900 48%,
-    #fff3b0 60%,
-    #ffd700 78%,
-    #fff6d0 100%
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  filter:
-    drop-shadow(0 0 5px rgba(255,215,0,0.55))
-    drop-shadow(0 0 14px rgba(255,190,0,0.35));
-
-  animation:
-    goldShine 3s ease-in-out infinite alternate;
-}
-
-@keyframes goldShine {
-  from {
-    filter:
-      drop-shadow(
-        0 0 4px rgba(255,215,0,0.35)
-      );
-  }
-
-  to {
-    filter:
-      drop-shadow(
-        0 0 10px rgba(255,215,0,0.85)
-      )
-      drop-shadow(
-        0 0 22px rgba(255,190,0,0.45)
-      );
-  }
-}
-
-/* ==============================
-   CHINESE TITLES
-============================== */
-
-h1,
-h2 {
+h1, h2 {
   font-family: "Ma Shan Zheng", cursive;
   font-weight: 400;
 }
@@ -241,7 +210,6 @@ h1 {
 .heart {
   display: inline-block;
   padding: 0 3px;
-
   font-size: 24px;
   color: #ffc6ac;
 }
@@ -253,8 +221,7 @@ h1 {
 }
 
 .date {
-  margin-top: 25px;
-
+  margin-top: 20px;
   font-size: 18px;
   letter-spacing: 2px;
   color: #ffe0a4;
@@ -262,16 +229,71 @@ h1 {
 
 .scroll {
   margin-top: 40px;
-
   font-size: 13px;
   letter-spacing: 3px;
-
   animation: float 2s infinite;
 }
 
-/* ==============================
-   DETAILS SECTION
-============================== */
+/* GOLD CALLIGRAPHY SYMBOL */
+
+.xi-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 165px;
+  margin: 8px auto 15px;
+}
+
+.xi-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: goldenGlow 3s ease-in-out infinite alternate;
+}
+
+.xi-fallback {
+  display: none;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 115px;
+  line-height: 1;
+  color: #ffd700;
+  background: linear-gradient(
+    160deg,
+    #fffce8,
+    #ffd700 35%,
+    #ffb900 48%,
+    #fff3b0 60%,
+    #ffd700 78%,
+    #fff6d0
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldenGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes goldenGlow {
+  0% {
+    filter:
+      brightness(.85)
+      drop-shadow(0 0 3px rgba(255,195,0,.3));
+  }
+  50% {
+    filter:
+      brightness(1.15)
+      drop-shadow(0 0 9px rgba(255,215,0,.7))
+      drop-shadow(0 0 18px rgba(255,190,0,.35));
+  }
+  100% {
+    filter:
+      brightness(1.35)
+      drop-shadow(0 0 13px rgba(255,215,0,.9))
+      drop-shadow(0 0 25px rgba(255,180,0,.5));
+  }
+}
+
+/* DETAILS */
 
 .details {
   padding: 80px 20px 100px;
@@ -281,7 +303,6 @@ h1 {
 .container {
   position: relative;
   z-index: 1;
-
   max-width: 700px;
   margin: auto;
 }
@@ -292,41 +313,26 @@ h1 {
   margin: 10px 0 25px;
 }
 
-/* ==============================
-   COUPLE PHOTO
-============================== */
-
 .photo {
   display: block;
-
   width: 100%;
   max-width: 520px;
-
   margin: 28px auto;
-
   border: 8px solid #a66b36;
   outline: 2px solid #f6d99a;
   outline-offset: 5px;
-
   border-radius:
     180px 180px 12px 12px /
     80px 80px 12px 12px;
-
   box-shadow: 0 18px 55px #18000899;
 }
-
-/* ==============================
-   INVITATION DETAILS
-============================== */
 
 .info {
   margin-top: 40px;
   padding: 30px 22px;
-
   border: 1px solid #e7b96f;
   border-radius: 18px;
-
-  background: rgba(91,13,26,0.82);
+  background: rgba(91, 13, 26, .82);
   line-height: 2.4;
 }
 
@@ -340,14 +346,11 @@ h1 {
   overflow-wrap: anywhere;
 }
 
-/* ==============================
-   FOOTER
-============================== */
+/* FOOTER */
 
 .footer {
   padding: 45px 20px;
   text-align: center;
-
   color: var(--gold);
   line-height: 2;
 }
@@ -357,43 +360,30 @@ h1 {
   font-size: 34px;
 }
 
-/* ==============================
-   MUSIC BUTTON
-============================== */
+/* MUSIC */
 
 .music {
   position: fixed;
-
   right: 20px;
   bottom: 24px;
   z-index: 20;
-
   width: 56px;
   height: 56px;
-
   border: 1px solid var(--gold);
   border-radius: 50%;
-
   background: #780f20;
   color: var(--gold);
-
   font-size: 25px;
   cursor: pointer;
-
   box-shadow: 0 5px 25px #0006;
 }
 
-/* ==============================
-   SCROLL REVEAL
-============================== */
+/* REVEAL */
 
 .reveal {
   opacity: 0;
   transform: translateY(35px);
-
-  transition:
-    opacity 1s,
-    transform 1s;
+  transition: opacity 1s, transform 1s;
 }
 
 .reveal.visible {
@@ -401,48 +391,56 @@ h1 {
   transform: none;
 }
 
-/* ==============================
-   ANIMATIONS
-============================== */
-
 @keyframes float {
-  50% {
-    transform: translateY(10px);
-  }
+  50% { transform: translateY(10px); }
 }
 
-/* ==============================
-   MOBILE VERSION
-============================== */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
   body::before {
-    background-color: #650a16;
     background-image: url("wedding-mobile.png");
-    background-repeat: no-repeat;
-    background-position: center center;
     background-size: cover;
-  }
-
-  .hero,
-  .details,
-  .footer {
-    background: transparent;
-    background-image: none;
+    background-position: center;
   }
 
   .hero {
     min-height: 100svh;
-    padding: 50px 18px 45px;
+    padding: 45px 17px 50px;
   }
 
   .frame {
     width: 100%;
-    padding: 42px 15px;
+    padding: 60px 16px 60px;
   }
 
-  .xi {
+  .frame::before {
+    inset: 11px;
+  }
+
+  .ornament-top,
+  .ornament-bottom {
+    font-size: 27px;
+  }
+
+  .ornament-top { top: -15px; }
+  .ornament-bottom { bottom: -17px; }
+
+  .side-ornament {
+    font-size: 20px;
+  }
+
+  .side-ornament.left { left: -11px; }
+  .side-ornament.right { right: -11px; }
+
+  .xi-container {
+    width: 145px;
+    height: 140px;
+    margin: 5px auto 12px;
+  }
+
+  .xi-fallback {
     font-size: 105px;
   }
 
@@ -494,62 +492,59 @@ h1 {
   .music {
     right: 16px;
     bottom: 20px;
-
     width: 50px;
     height: 50px;
   }
 }
 
-/* ==============================
-   REDUCED MOTION
-============================== */
-
 @media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
   }
-
   .reveal {
     opacity: 1;
     transform: none;
   }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ==============================
-     FIRST SECTION
-============================== -->
-
 <section class="hero">
-
   <div class="frame">
 
-    <div class="eyebrow">
-      良辰吉日 · 喜结良缘
+    <div class="ornament-top" aria-hidden="true">❦ ✿ ❦</div>
+    <div class="ornament-bottom" aria-hidden="true">❦ ✿ ❦</div>
+
+    <div class="side-ornament left" aria-hidden="true">
+      ❧<br>✿<br>❧
+    </div>
+    <div class="side-ornament right" aria-hidden="true">
+      ❧<br>✿<br>❧
     </div>
 
-    <div class="xi">
-      囍
+    <div class="eyebrow">良辰吉日 · 喜结良缘</div>
+
+    <div class="xi-container">
+      <img
+        class="xi-image"
+        src="xi-gold.png"
+        alt="囍"
+        onerror="this.style.display='none';document.getElementById('xiFallback').style.display='block';"
+      >
+      <span class="xi-fallback" id="xiFallback" aria-hidden="true">囍</span>
     </div>
 
-    <h1>
-      结婚登记邀请函
-    </h1>
+    <h1>结婚登记邀请函</h1>
 
     <div class="names">
-      陈中洪
-      <span class="heart">♡</span>
-      林小妤
+      陈中洪 <span class="heart">♡</span> 林小妤
     </div>
+
+    <div class="gold-divider" aria-hidden="true"><span>✿</span></div>
 
     <p class="quote">
       两姓联姻，一堂缔约<br>
@@ -557,207 +552,99 @@ h1 {
       诚邀您见证我们的幸福时刻
     </p>
 
-    <div class="date">
-      2026年11月16日 · 星期一
-    </div>
+    <div class="gold-divider" aria-hidden="true"><span>✿</span></div>
+
+    <div class="date">2026年11月16日 · 星期一</div>
 
   </div>
 
-  <div class="scroll">
-    向下滑动 · 开启幸福 ↓
-  </div>
-
+  <div class="scroll">向下滑动 · 开启幸福 ↓</div>
 </section>
 
-<!-- ==============================
-     SECOND SECTION
-============================== -->
-
 <section class="details">
-
   <div class="container">
 
     <div class="reveal">
-
-      <div class="eyebrow">
-        OUR SPECIAL DAY
-      </div>
-
-      <h2>
-        执子之手 · 与子偕老
-      </h2>
-
+      <div class="eyebrow">OUR SPECIAL DAY</div>
+      <h2>执子之手 · 与子偕老</h2>
       <p class="quote">
         从此一屋两人，三餐四季<br>
         山河远阔，人间烟火<br>
         皆与你共度
       </p>
-
     </div>
 
-    <!-- COUPLE PHOTO -->
-
-    <img
-      class="photo reveal"
-      src="couple.png"
-      alt="陈中洪与林小妤的合影"
-    >
-
-    <!-- EVENT INFORMATION -->
+    <img class="photo reveal" src="couple.png"
+      alt="陈中洪与林小妤的合影">
 
     <div class="info reveal">
+      <strong>诚挚邀请</strong>
+      <p>愿与您共同分享这份喜悦</p>
 
-      <strong>
-        诚挚邀请
-      </strong>
+      <strong>日期</strong>
+      <p>2026年11月16日 星期一</p>
 
-      <p>
-        愿与您共同分享这份喜悦
-      </p>
+      <strong>登记地点</strong>
+      <p>河南省政务服务中心一楼F区</p>
 
-      <strong>
-        日期
-      </strong>
-
-      <p>
-        2026年11月16日 星期一
-      </p>
-
-      <strong>
-        登记地点
-      </strong>
-
-      <p>
-        河南省政务服务中心一楼F区
-      </p>
-
-      <strong>
-        详细地址
-      </strong>
-
+      <strong>详细地址</strong>
       <p class="address">
         郑州市郑东新区农业南路与祥盛街交叉口
         向东100米路南，省政务服务中心一楼F区。
       </p>
-
     </div>
 
   </div>
-
 </section>
 
-<!-- ==============================
-     FOOTER
-============================== -->
-
 <footer class="footer">
-
-  <div class="footer-message">
-    百年好合 · 永结同心
-  </div>
-
-  <div>
-    陈中洪 ♡ 林小妤
-  </div>
-
-  <small>
-    2026.11.16
-  </small>
-
+  <div class="footer-message">百年好合 · 永结同心</div>
+  <div>陈中洪 ♡ 林小妤</div>
+  <small>2026.11.16</small>
 </footer>
 
-<!-- ==============================
-     MUSIC BUTTON
-============================== -->
+<button class="music" id="musicButton"
+  type="button" aria-label="播放或暂停音乐">♫</button>
 
-<button
-  class="music"
-  id="musicButton"
-  type="button"
-  aria-label="播放或暂停音乐"
->
-  ♫
-</button>
-
-<audio
-  id="bgMusic"
-  loop
-  preload="none"
->
-  <source
-    src="wedding-music.mp3"
-    type="audio/mpeg"
-  >
+<audio id="bgMusic" loop preload="none">
+  <source src="wedding-music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- ==============================
-     JAVASCRIPT
-============================== -->
-
 <script>
-
-/* SCROLL REVEAL */
-
 if ("IntersectionObserver" in window) {
-
-  const observer = new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.12
-    }
-  );
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
 
   document.querySelectorAll(".reveal")
     .forEach(el => observer.observe(el));
-
 } else {
-
   document.querySelectorAll(".reveal")
     .forEach(el => el.classList.add("visible"));
-
 }
-
-/* MUSIC CONTROL */
 
 const music = document.getElementById("bgMusic");
 const button = document.getElementById("musicButton");
 
 button.addEventListener("click", async () => {
-
   if (!music.paused) {
-
     music.pause();
     button.textContent = "♫";
     return;
-
   }
 
   try {
-
     await music.play();
     button.textContent = "Ⅱ";
-
   } catch (error) {
-
     alert("无法播放音乐，请检查 wedding-music.mp3 文件。");
-
   }
-
 });
-
 </script>
 
 </body>
