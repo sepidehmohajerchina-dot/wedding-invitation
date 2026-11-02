@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#650a16">
 
-  <title>Zhonghong Chen & Sepideh Mohajer | Wedding Registration Invitation</title>
+  <title>
+    Zhonghong Chen & Sepideh Mohajer |
+    Wedding Registration Invitation
+  </title>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
@@ -14,6 +17,11 @@
   >
 
   <style>
+
+    /* =========================
+       COLORS AND GENERAL STYLE
+    ========================= */
+
     :root {
       --gold: #f6d99a;
       --darkgold: #b77a35;
@@ -27,27 +35,25 @@
 
     html {
       scroll-behavior: smooth;
+      background-color: var(--red);
     }
 
     body {
       margin: 0;
+      min-height: 100vh;
+      position: relative;
+      isolation: isolate;
+      overflow-x: hidden;
+
       color: var(--cream);
       font-family: "Cormorant Garamond", Georgia, serif;
       background-color: var(--red);
-      overflow-x: hidden;
-      position: relative;
-      isolation: isolate;
     }
 
-    /*
-      ONE CONTINUOUS FLORAL BACKGROUND
-
-      The image is fitted to the full screen width.
-      It is not cropped horizontally on mobile.
-
-      A single fixed background is used for all
-      sections to prevent visible seams.
-    */
+    /* =========================
+       DESKTOP BACKGROUND
+       Horizontal floral image
+    ========================= */
 
     body::before {
       content: "";
@@ -59,30 +65,51 @@
       background-color: var(--red);
       background-image: url("wedding-background.png");
       background-repeat: no-repeat;
-      background-position: center top;
+      background-position: center center;
       background-size: cover;
     }
 
-    section {
+    /* =========================
+       TRANSPARENT SECTIONS
+       Prevent background seams
+    ========================= */
+
+    .hero,
+    .details,
+    .footer {
       position: relative;
-      overflow: visible;
       background: transparent;
+      background-image: none;
     }
+
+    section {
+      overflow: visible;
+    }
+
+    /* =========================
+       FIRST SECTION
+    ========================= */
 
     .hero {
       min-height: 100svh;
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       padding: 65px 22px 55px;
       text-align: center;
-      background: transparent;
     }
+
+    /* =========================
+       GOLDEN FRAME
+    ========================= */
 
     .frame {
       position: relative;
       z-index: 1;
+
       width: min(100%, 650px);
       padding: 48px 22px;
 
@@ -105,9 +132,11 @@
     .frame::before,
     .frame::after {
       content: "❀  ❈  ❀";
+
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+
       color: var(--gold);
       font-size: 22px;
       letter-spacing: 10px;
@@ -122,20 +151,24 @@
       bottom: 10px;
     }
 
+    /* =========================
+       MONOGRAM AND TEXT
+    ========================= */
+
     .eyebrow {
       font-size: 13px;
       letter-spacing: 5px;
-      color: #ffdfaa;
       line-height: 1.6;
+      color: #ffdfaa;
     }
-
-    /* GOLDEN H & S MONOGRAM */
 
     .monogram {
       display: block;
+
       width: 260px;
       max-width: 75%;
       height: auto;
+
       margin: 12px auto 18px;
       object-fit: contain;
     }
@@ -160,10 +193,11 @@
     }
 
     .heart {
-      font-size: 24px;
-      color: #ffc6ac;
       display: inline-block;
       padding: 0 3px;
+
+      font-size: 24px;
+      color: #ffc6ac;
     }
 
     .quote {
@@ -174,6 +208,7 @@
 
     .date {
       margin-top: 25px;
+
       font-size: 18px;
       letter-spacing: 2px;
       color: #ffe0a4;
@@ -181,20 +216,26 @@
 
     .scroll {
       margin-top: 40px;
+
       font-size: 13px;
       letter-spacing: 3px;
+
       animation: float 2s infinite;
     }
+
+    /* =========================
+       SECOND SECTION
+    ========================= */
 
     .details {
       padding: 80px 20px 100px;
       text-align: center;
-      background: transparent;
     }
 
     .container {
       position: relative;
       z-index: 1;
+
       max-width: 700px;
       margin: auto;
     }
@@ -205,10 +246,16 @@
       margin: 10px 0 25px;
     }
 
+    /* =========================
+       COUPLE PHOTO
+    ========================= */
+
     .photo {
+      display: block;
+
       width: 100%;
       max-width: 520px;
-      display: block;
+
       margin: 28px auto;
 
       border: 8px solid #a66b36;
@@ -222,11 +269,17 @@
       box-shadow: 0 18px 55px #18000899;
     }
 
+    /* =========================
+       EVENT DETAILS
+    ========================= */
+
     .info {
+      margin-top: 40px;
+      padding: 30px 22px;
+
       border: 1px solid #e7b96f;
       border-radius: 18px;
-      padding: 30px 22px;
-      margin-top: 40px;
+
       background: rgba(91, 13, 26, 0.82);
       line-height: 2.4;
     }
@@ -241,20 +294,30 @@
       overflow-wrap: anywhere;
     }
 
+    /* =========================
+       FOOTER
+    ========================= */
+
     .footer {
       padding: 45px 20px;
       text-align: center;
+
       color: var(--gold);
       line-height: 2;
-      background: transparent;
-      position: relative;
-      z-index: 1;
     }
 
-    /* MUSIC BUTTON */
+    .footer-message {
+      font-family: "Great Vibes", cursive;
+      font-size: 38px;
+    }
+
+    /* =========================
+       MUSIC BUTTON
+    ========================= */
 
     .music {
       position: fixed;
+
       right: 20px;
       bottom: 24px;
       z-index: 20;
@@ -267,17 +330,21 @@
 
       background: #780f20;
       color: var(--gold);
+
       font-size: 25px;
       cursor: pointer;
 
       box-shadow: 0 5px 25px #0006;
     }
 
-    /* SCROLL ANIMATION */
+    /* =========================
+       ANIMATIONS
+    ========================= */
 
     .reveal {
       opacity: 0;
       transform: translateY(35px);
+
       transition:
         opacity 1s,
         transform 1s;
@@ -294,35 +361,39 @@
       }
     }
 
-    /*
-      MOBILE VERSION
-
-      The floral image is fitted to the full
-      screen width, preserving both side flowers.
-
-      No background image is assigned separately
-      to hero, details, or footer.
-    */
+    /* =========================
+       MOBILE VERSION
+       Vertical floral image
+    ========================= */
 
     @media (max-width: 600px) {
 
-      body {
-        background-color: #650a16;
-      }
+      /*
+        Mobile uses wedding-mobile.png.
+        Desktop keeps wedding-background.png.
+
+        The image is a single fixed layer.
+        It does not restart between sections.
+      */
 
       body::before {
-        background-image: url("wedding-background.png");
         background-color: #650a16;
+
+        background-image: url("wedding-mobile.png");
         background-repeat: no-repeat;
-        background-position: center top;
-        background-size: 100% auto;
+        background-position: center center;
+        background-size: cover;
+      }
+
+      body::after {
+        display: none;
       }
 
       .hero,
       .details,
       .footer {
-        background: transparent !important;
-        background-image: none !important;
+        background: transparent;
+        background-image: none;
       }
 
       .hero {
@@ -331,14 +402,14 @@
       }
 
       .frame {
-        padding: 42px 15px;
         width: 100%;
-        background: rgba(75, 0, 12, 0.08);
+        padding: 42px 15px;
       }
 
       .monogram {
         width: 190px;
         max-width: 75%;
+
         margin: 10px auto 15px;
       }
 
@@ -353,8 +424,8 @@
 
       .quote {
         font-size: 15px;
-        letter-spacing: 0.3px;
         line-height: 1.9;
+        letter-spacing: 0.3px;
       }
 
       .details {
@@ -386,14 +457,16 @@
       .music {
         right: 16px;
         bottom: 20px;
+
         width: 50px;
         height: 50px;
       }
+
     }
 
-    /*
-      REDUCED MOTION ACCESSIBILITY
-    */
+    /* =========================
+       ACCESSIBILITY
+    ========================= */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -409,13 +482,17 @@
         opacity: 1;
         transform: none;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- FIRST SECTION -->
+  <!-- =========================
+       HERO SECTION
+  ========================= -->
 
   <section class="hero">
 
@@ -459,7 +536,9 @@
 
   </section>
 
-  <!-- SECOND SECTION -->
+  <!-- =========================
+       DETAILS SECTION
+  ========================= -->
 
   <section class="details">
 
@@ -483,7 +562,7 @@
 
       </div>
 
-      <!-- COUPLE PHOTO -->
+      <!-- COUPLE PORTRAIT -->
 
       <img
         class="photo reveal"
@@ -491,7 +570,7 @@
         alt="Wedding portrait of Zhonghong Chen and Sepideh Mohajer"
       >
 
-      <!-- EVENT INFORMATION -->
+      <!-- INVITATION INFORMATION -->
 
       <div class="info reveal">
 
@@ -519,7 +598,9 @@
           1st Floor, Zone F
         </p>
 
-        <strong>Address</strong>
+        <strong>
+          Address
+        </strong>
 
         <p class="address">
           South side of the road, 100 meters east of the
@@ -534,16 +615,13 @@
 
   </section>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer class="footer">
 
-    <div
-      style="
-        font-family: 'Great Vibes', cursive;
-        font-size: 38px;
-      "
-    >
+    <div class="footer-message">
       A Lifetime of Love · Forever as One
     </div>
 
@@ -557,7 +635,9 @@
 
   </footer>
 
-  <!-- MUSIC -->
+  <!-- =========================
+       MUSIC BUTTON
+  ========================= -->
 
   <button
     class="music"
@@ -579,7 +659,9 @@
     >
   </audio>
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
   <script>
 
@@ -621,7 +703,6 @@
     /* MUSIC CONTROL */
 
     const music = document.getElementById("bgMusic");
-
     const button = document.getElementById("musicButton");
 
     button.addEventListener("click", async () => {
@@ -629,7 +710,6 @@
       if (!music.paused) {
 
         music.pause();
-
         button.textContent = "♫";
 
         return;
@@ -639,7 +719,6 @@
       try {
 
         await music.play();
-
         button.textContent = "Ⅱ";
 
       } catch (error) {
