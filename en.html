@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,7 +53,6 @@
 
     /* =========================
        DESKTOP BACKGROUND
-       Horizontal floral image
     ========================= */
 
     body::before {
@@ -71,7 +71,6 @@
 
     /* =========================
        TRANSPARENT SECTIONS
-       Prevent background seams
     ========================= */
 
     .hero,
@@ -87,7 +86,7 @@
     }
 
     /* =========================
-       FIRST SECTION
+       HERO SECTION
     ========================= */
 
     .hero {
@@ -185,11 +184,25 @@
       line-height: 1.35;
     }
 
+    /* =========================
+       COUPLE NAMES
+    ========================= */
+
     .names {
       font-family: "Allura", cursive;
       font-size: clamp(27px, 5vw, 42px);
       line-height: 1.7;
       color: #ffe5af;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      column-gap: 8px;
+    }
+
+    .person-name {
+      white-space: nowrap;
     }
 
     .heart {
@@ -224,7 +237,7 @@
     }
 
     /* =========================
-       SECOND SECTION
+       DETAILS SECTION
     ========================= */
 
     .details {
@@ -363,30 +376,16 @@
 
     /* =========================
        MOBILE VERSION
-       Vertical floral image
     ========================= */
 
     @media (max-width: 600px) {
 
-      /*
-        Mobile uses wedding-mobile.png.
-        Desktop keeps wedding-background.png.
-
-        The image is a single fixed layer.
-        It does not restart between sections.
-      */
-
       body::before {
         background-color: #650a16;
-
         background-image: url("wedding-mobile.png");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-      }
-
-      body::after {
-        display: none;
       }
 
       .hero,
@@ -409,7 +408,6 @@
       .monogram {
         width: 190px;
         max-width: 75%;
-
         margin: 10px auto 15px;
       }
 
@@ -417,9 +415,38 @@
         font-size: clamp(38px, 10vw, 52px);
       }
 
+      /* =========================
+         MOBILE NAMES FIX
+         One complete name per line
+      ========================= */
+
       .names {
-        font-size: clamp(26px, 7vw, 36px);
-        line-height: 1.55;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 0;
+
+        font-size: clamp(28px, 7.5vw, 35px);
+        line-height: 1.2;
+        letter-spacing: 0;
+
+        margin: 10px auto 15px;
+        width: 100%;
+      }
+
+      .person-name {
+        display: block;
+        white-space: nowrap;
+        max-width: 100%;
+      }
+
+      .names .heart {
+        display: block;
+        font-size: 20px;
+        line-height: 1.1;
+        padding: 2px 0;
       }
 
       .quote {
@@ -461,7 +488,26 @@
         width: 50px;
         height: 50px;
       }
+    }
 
+    /* =========================
+       VERY SMALL SCREENS
+    ========================= */
+
+    @media (max-width: 360px) {
+
+      .names {
+        font-size: 27px;
+      }
+
+      .frame {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
     }
 
     /* =========================
@@ -482,7 +528,6 @@
         opacity: 1;
         transform: none;
       }
-
     }
 
   </style>
@@ -512,10 +557,22 @@
         Wedding Registration Invitation
       </h1>
 
+      <!-- COUPLE NAMES -->
+
       <div class="names">
-        Zhonghong Chen
-        <span class="heart">♡</span>
-        Sepideh Mohajer
+
+        <span class="person-name">
+          Zhonghong Chen
+        </span>
+
+        <span class="heart">
+          ♡
+        </span>
+
+        <span class="person-name">
+          Sepideh Mohajer
+        </span>
+
       </div>
 
       <p class="quote">
@@ -677,7 +734,6 @@
             if (entry.isIntersecting) {
 
               entry.target.classList.add("visible");
-
               observer.unobserve(entry.target);
 
             }
@@ -711,7 +767,6 @@
 
         music.pause();
         button.textContent = "♫";
-
         return;
 
       }
